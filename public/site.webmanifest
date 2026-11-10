@@ -1,0 +1,21 @@
+{
+  "name": "4L Energia Solar",
+  "short_name": "4L Solar",
+  "description": "Projetos e instalação de energia solar fotovoltaica residencial, empresarial e Mercado Livre de Energia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1B33",
+  "theme_color": "#1D4ED8",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}

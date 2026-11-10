@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Sun Rays & Sun Arc -->
+  <circle cx="50" cy="45" r="30" fill="url(#sunGrad)"/>
+  <path d="M50 12 L50 20 M30 20 L35 26 M70 20 L65 26 M20 35 L27 38 M80 35 L73 38" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Rooftop and Solar Panels -->
+  <path d="M25 60 L50 35 L75 60 L68 64 L50 46 L32 64 Z" fill="#1D4ED8"/>
+  <path d="M38 52 L50 40 L62 52 L56 56 L50 50 L44 56 Z" fill="#3B82F6"/>
+  <rect x="46" y="55" width="8" height="8" rx="1" fill="#60A5FA"/>
+
+  <!-- Leaf Swoop -->
+  <path d="M18 55 C18 78 40 85 70 78 C52 82 28 75 25 58 C22 52 20 48 18 55 Z" fill="url(#leafGrad)"/>
+
+  <defs>
+    <linearGradient id="sunGrad" x1="20" y1="20" x2="80" y2="60" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="18" y1="50" x2="70" y2="85" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22C55E"/>
+      <stop offset="1" stop-color="#16A34A"/>
+    </linearGradient>
+  </defs>
+</svg>

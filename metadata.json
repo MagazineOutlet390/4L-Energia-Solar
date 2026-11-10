@@ -1,0 +1,6 @@
+{
+  "name": "4L Energia Solar",
+  "description": "Portal institucional, portfólio de projetos, calculadora de economia e blog especializado em energia solar fotovoltaica para Campinas e Circuito das Águas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

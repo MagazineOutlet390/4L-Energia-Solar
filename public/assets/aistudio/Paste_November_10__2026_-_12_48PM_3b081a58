@@ -1,0 +1,1031 @@
+# PROJETO COMPLETO — RECONSTRUÇÃO DO SITE 4L ENERGIA SOLAR
+## PROMPT-MESTRE PARA GOOGLE AI STUDIO
+
+### 1. PAPEL E OBJETIVO
+
+Você atuará como uma equipe multidisciplinar composta por:
+
+- Engenheiro de software sênior especializado em React, Vite e TypeScript.
+- Desenvolvedor front-end especializado em interfaces modernas e responsivas.
+- Designer UI/UX especializado em sites institucionais de alto padrão.
+- Especialista em SEO técnico, SEO local e arquitetura de informação.
+- Especialista em performance, Core Web Vitals e Cloudflare Pages.
+- Especialista em conversão, landing pages e geração de leads.
+
+Sua missão é RECONSTRUIR DO ZERO o site da empresa 4L Energia Solar, substituindo integralmente a implementação atual.
+
+Não quero apenas uma reformulação visual do site antigo. Quero um projeto novo, organizado, profissional, tecnicamente sólido, otimizado para mecanismos de busca e preparado para crescimento.
+
+O site deverá transmitir confiança, experiência técnica, sustentabilidade, modernidade e capacidade de atendimento residencial e empresarial.
+
+O principal objetivo comercial é gerar contatos qualificados pelo WhatsApp, solicitações de orçamento e oportunidades comerciais.
+
+### 2. REFERÊNCIAS DO PROJETO ORIGINAL
+
+Site atual:
+
+https://4lenergiasolar.com.br/
+
+Páginas existentes que devem preservar exatamente suas URLs:
+
+https://4lenergiasolar.com.br/mercado-livre
+
+https://4lenergiasolar.com.br/meus-projetos
+
+O site atual foi desenvolvido utilizando Lovable, React, Vite e Tailwind, e está hospedado na Vercel.
+
+A nova implementação substituirá integralmente a anterior.
+
+A hospedagem definitiva será no Cloudflare Pages.
+
+Utilize o site existente como referência de conteúdo, identidade e funcionalidades, sem reproduzir seus problemas técnicos ou limitações visuais.
+
+Se não conseguir acessar alguma página ou algum recurso do site antigo, não invente seu conteúdo. Utilize as informações fornecidas neste briefing e identifique o que precisa ser recuperado.
+
+### 3. ARQUIVOS ANEXADOS E ORDEM DE INTERPRETAÇÃO
+
+Os arquivos serão anexados nesta ordem:
+
+1. Primeira imagem: logo oficial da 4L Energia Solar.
+2. Imagens seguintes: capturas de tela de avaliações reais da empresa no Google.
+
+INSTRUÇÕES:
+
+- Examine o logo antes de definir a identidade visual.
+- Extraia as cores predominantes da marca a partir do arquivo original.
+- Utilize o logo original no cabeçalho e no rodapé.
+- Não redesenhe, distorça ou modifique desnecessariamente a identidade da marca.
+- Os prints seguintes devem ser interpretados como avaliações reais do Google, e não como imagens decorativas.
+- Preserve nomes, textos, datas e notas exatamente como aparecem nos prints.
+- Não invente avaliações para preencher espaços vazios.
+- Não interprete a primeira imagem como uma avaliação: ela é exclusivamente o logo.
+
+Link do perfil Google/Google Maps: [INSERIR LINK]
+
+Link direto para avaliações, caso exista: [INSERIR LINK OU UTILIZAR O LINK ACIMA]
+
+Caso não seja possível identificar alguma informação nos prints, sinalize para confirmação.
+
+### 4. IDENTIDADE DA EMPRESA E INFORMAÇÕES COMERCIAIS
+
+Nome: 4L Energia Solar.
+
+Atividade: projetos e instalação de sistemas de energia solar fotovoltaica residencial e comercial, além de atuação com Mercado Livre de Energia.
+
+Endereço comercial:
+
+Rua Stecca Pelegrini, Jardim Santa Lúcia, Campinas - SP.
+
+CEP e número: [CONFIRMAR].
+
+WhatsApp:
+
+(19) 9 8315-5772
+
+Link:
+
+https://wa.me/5519983155772
+
+E-mail oficial: [CONFIRMAR].
+
+O endereço de e-mail antigo era contato@4lenergiasolarsolutions.com.br, mas não assumir que continua válido.
+
+Base operacional: Campinas/SP.
+
+Regiões prioritárias de atendimento:
+
+- Campinas.
+- Indaiatuba.
+- Socorro.
+- Águas de Lindóia.
+- Lindóia.
+- Amparo.
+- Serra Negra.
+- Monte Alegre do Sul.
+- Outras localidades próximas, mediante confirmação da empresa.
+
+Informações comerciais fornecidas:
+
+- Mais de 200 clientes atendidos.
+- Quase 10 anos de experiência.
+- Financiamento disponível.
+
+ATENÇÃO À VERACIDADE:
+
+Não transformar "+200 clientes atendidos" em "+200 instalações" ou "+200 projetos instalados".
+
+Não divulgar equipe certificada, manutenção inclusa, garantia de desempenho por 25 anos ou qualquer outra condição sem confirmação específica.
+
+A garantia dos equipamentos depende do fabricante, modelo e condições contratuais. Não apresentar garantias de componentes diferentes como se fossem uma única garantia da empresa.
+
+Não utilizar em nenhuma parte do site, metadados, imagens, SEO ou dados estruturados o número antigo de "+500 projetos".
+
+### 5. STACK TECNOLÓGICA
+
+Utilizar:
+
+- React.
+- Vite.
+- TypeScript.
+- Tailwind CSS.
+- Framer Motion.
+- lucide-react.
+- react-router-dom.
+- react-helmet-async ou solução equivalente compatível com a pré-renderização.
+
+Utilizar arquitetura organizada, componentes reutilizáveis e separação entre conteúdo, dados e apresentação.
+
+Fonte: Roboto ou Inter, conforme melhor combinação com a identidade visual.
+
+Google Fonts com font-display: swap.
+
+Não instalar bibliotecas desnecessárias.
+
+Não utilizar serviços pagos ou dependências externas que criem custos inesperados.
+
+O projeto deve ser totalmente compatível com GitHub e Cloudflare Pages.
+
+### 6. IDENTIDADE VISUAL E DIREÇÃO DE DESIGN
+
+A identidade deve partir do logo anexado.
+
+Cores de referência aproximadas:
+
+- Azul principal: #1E5BB8.
+- Azul escuro: #0F2F6B.
+- Azul claro: #60A5FA.
+- Verde: #2EA82E ou #16A34A.
+- Laranja solar: #F59B1B.
+- Amarelo solar: #FFC83D.
+- Fundo claro: #F8FAFC.
+- Texto principal: #0B1B33.
+- Cinza secundário: #64748B.
+
+Ajustar os valores finais de acordo com o logo original.
+
+DIREÇÃO VISUAL:
+
+Quero um site moderno, sofisticado, com aparência de empresa profissional e estabelecida.
+
+Não quero um template genérico de energia solar.
+
+Características:
+
+- Tipografia forte e bem hierarquizada.
+- Hero visualmente impactante.
+- Imagens grandes e de qualidade.
+- Cards com cantos arredondados.
+- Glassmorphism aplicado com moderação.
+- Sombras suaves.
+- Gradientes azul e azul-escuro.
+- Detalhes solares em amarelo e laranja.
+- Verde reservado para WhatsApp, economia e indicadores positivos.
+- Alternância equilibrada entre seções claras e escuras.
+- Bastante espaço entre blocos.
+- Microinterações elegantes.
+- Contraste adequado em todos os dispositivos.
+
+Evitar excesso de elementos, textos sobrepostos e efeitos que prejudiquem a leitura.
+
+### 7. LOGO, FAVICON E IDENTIDADE DIGITAL
+
+Utilizar o logo original no cabeçalho.
+
+No rodapé, utilizar versão menor e discreta.
+
+Preparar os seguintes arquivos de identidade:
+
+- favicon.ico.
+- favicon-16x16.png.
+- favicon-32x32.png.
+- apple-touch-icon.png, 180x180.
+- icon-192.png.
+- icon-512.png.
+- site.webmanifest.
+
+O favicon deverá utilizar apenas o símbolo do logo, sem o texto, desde que seja possível extraí-lo adequadamente.
+
+Se a qualidade do arquivo não permitir uma extração limpa, solicitar uma versão vetorial ou de maior resolução.
+
+Incluir as referências no index.html.
+
+### 8. ANIMAÇÕES E EXPERIÊNCIA VISUAL
+
+As animações devem valorizar o projeto, sem prejudicar desempenho ou usabilidade.
+
+A) HERO COM IMAGEM DE FUNDO
+
+Todas as páginas principais devem começar com Hero contendo imagem de fundo.
+
+Temas:
+
+- Painéis solares ao nascer ou pôr do sol.
+- Telhados residenciais com painéis.
+- Instalações comerciais.
+- Usinas e estruturas fotovoltaicas.
+
+Cada página deve ter imagem adequada ao seu conteúdo.
+
+Usar overlay escuro em gradiente para garantir contraste.
+
+Não utilizar imagens ilustrativas como se fossem instalações reais da 4L.
+
+B) PARALLAX
+
+Utilizar Framer Motion com useScroll e useTransform.
+
+O efeito deve ser perceptível, mas controlado.
+
+Aplicar prioritariamente no Hero e em uma ou duas seções de destaque.
+
+Utilizar transform e opacity, evitando operações que prejudiquem a renderização.
+
+Garantir funcionamento em dispositivos móveis, sem background-attachment: fixed.
+
+C) TYPEWRITER
+
+Aplicar efeito de digitação no texto principal do Hero.
+
+Pode alternar frases ou expressões relacionadas a:
+
+- Economia na conta de luz.
+- Energia limpa.
+- Independência energética.
+- Energia solar para empresas.
+
+O H1 completo deve estar presente no HTML inicial, sem depender da animação para ser descoberto pelo Google.
+
+Não criar vários H1 para produzir o efeito.
+
+D) SHIMMER
+
+Criar classe reutilizável title-shimmer.
+
+Aplicar em títulos estratégicos, sem brilho excessivo ou animação infinita indiscriminada em todos os H1, H2 e H3.
+
+E) ENTRADA DE ELEMENTOS
+
+Utilizar fade e slide suaves durante a rolagem.
+
+Cards podem ter microinterações e leve elevação.
+
+Contadores podem ser animados quando entram na tela.
+
+Respeitar prefers-reduced-motion em todas as animações.
+
+Não utilizar animações excessivas simultaneamente.
+
+### 9. ESTRUTURA PRINCIPAL E ROTAS
+
+Manter as três rotas originais:
+
+- /
+- /mercado-livre
+- /meus-projetos
+
+Adicionar:
+
+- /sobre
+- /politica-de-privacidade
+
+As seis páginas locais serão produzidas em uma segunda etapa, mediante o segundo prompt.
+
+Preparar a arquitetura para incorporá-las sem reconstruir o projeto.
+
+Criar página 404 personalizada.
+
+Preservar exatamente as URLs originais.
+
+### 10. HOME — /
+
+#### 10.1 Cabeçalho
+
+Cabeçalho fixo ou sticky, translúcido, com:
+
+- Logo.
+- Início.
+- Projetos.
+- Mercado Livre.
+- Avaliações.
+- Sobre.
+- Contato.
+- Botão de WhatsApp.
+
+No celular, utilizar menu compacto e funcional.
+
+#### 10.2 HERO
+
+Imagem de fundo relacionada a energia solar.
+
+Título principal sugerido:
+
+"Energia Solar em Campinas e Circuito das Águas: Mais Economia para sua Conta de Luz"
+
+Subtítulo:
+
+"Projetos fotovoltaicos residenciais e empresariais com atendimento especializado em Campinas e região."
+
+CTAs:
+
+- Calcular Minha Economia.
+- Falar no WhatsApp.
+
+O primeiro CTA deve levar à calculadora.
+
+O segundo deve abrir o WhatsApp com mensagem contextualizada.
+
+#### 10.3 Faixa de indicadores
+
+Exibir:
+
+- +200 clientes atendidos.
+- Quase 10 anos de experiência.
+- Financiamento disponível.
+- Avaliações reais no Google.
+
+Não publicar indicadores que dependam de confirmação ainda não recebida.
+
+#### 10.4 Calculadora de economia
+
+Criar uma calculadora visual, intuitiva e responsiva.
+
+Campo inicial:
+
+Valor médio mensal da conta de energia em reais.
+
+Campos adicionais recomendados:
+
+- Cidade.
+- Tipo de imóvel: residencial ou comercial.
+- Consumo mensal em kWh, se disponível.
+
+A calculadora deverá oferecer uma estimativa preliminar de economia e potência sugerida.
+
+IMPORTANTE:
+
+Não utilizar uma fórmula arbitrária que converta diretamente o valor da conta em potência fotovoltaica.
+
+Criar parâmetros técnicos configuráveis, com premissas documentadas.
+
+Considerar, conforme disponibilidade dos dados:
+
+- Tarifa de energia.
+- Consumo mensal.
+- Irradiação solar da região.
+- Produtividade estimada.
+- Perdas do sistema.
+- Características da unidade consumidora.
+- Componentes tarifários que não são compensados.
+- Regras de compensação aplicáveis.
+
+Se não houver dados suficientes, apresentar uma estimativa simplificada com ressalva explícita, sem aparentar precisão técnica inexistente.
+
+O resultado deve deixar claro que se trata de simulação preliminar, não de dimensionamento definitivo ou proposta comercial.
+
+Ao final, solicitar:
+
+- Nome.
+- WhatsApp.
+
+Enviar os dados ao WhatsApp da empresa com mensagem pré-preenchida contendo os dados fornecidos e o resultado estimado.
+
+Validar os campos e evitar perda dos dados durante o processo.
+
+#### 10.5 Por que escolher a 4L
+
+Criar cards com:
+
+- Instalação profissional.
+- Economia na conta de luz.
+- Energia sustentável.
+- Monitoramento do sistema.
+- Suporte especializado.
+- Financiamento disponível.
+
+Manutenção inclusa somente se confirmada.
+
+Não prometer economia fixa.
+
+#### 10.6 Como funciona
+
+Timeline com quatro etapas:
+
+1. Análise da conta e perfil de consumo.
+2. Estudo técnico e elaboração do projeto.
+3. Instalação dos equipamentos.
+4. Homologação e acompanhamento da geração.
+
+Explicar de forma didática.
+
+#### 10.7 Áreas de atendimento
+
+Destacar:
+
+- Campinas.
+- Indaiatuba.
+- Socorro.
+- Águas de Lindóia.
+- Lindóia.
+- Amparo.
+
+Dar destaque visual ao Circuito das Águas.
+
+Cada card deve direcionar à respectiva página local, que será criada na segunda etapa.
+
+#### 10.8 Projetos em destaque
+
+Mostrar três projetos reais, selecionados do portfólio.
+
+Cada card deve conter:
+
+- Fotografia.
+- Nome do projeto.
+- Categoria.
+- Localização.
+- Potência instalada.
+- Economia mensal informada, quando disponível.
+
+Link para /meus-projetos.
+
+Não utilizar fotografias de bancos de imagens como se fossem obras reais.
+
+#### 10.9 Mercado Livre de Energia
+
+Criar uma seção comercial de destaque para empresas com consumo relevante.
+
+Texto-base:
+
+"Reduza seus custos de energia e avalie as oportunidades do Mercado Livre de Energia para sua empresa."
+
+Utilizar R$ 9 mil mensais como referência comercial inicial, não como regra universal de elegibilidade.
+
+CTA: Conheça o Mercado Livre de Energia.
+
+Link para /mercado-livre.
+
+#### 10.10 Avaliações do Google
+
+Título:
+
+"O que dizem nossos clientes no Google"
+
+Utilizar as imagens de avaliações anexadas.
+
+Cada avaliação deve apresentar:
+
+- Nome exatamente como aparece no Google.
+- Nota.
+- Texto original.
+- Data, se legível.
+- Selo visual "Avaliação real do Google".
+- Link para o perfil ou avaliação original.
+
+Priorizar transcrição textual dos prints, mantendo a imagem original disponível quando necessário.
+
+Cada card deve ser clicável e abrir o Google em nova aba, com rel="noopener noreferrer".
+
+Criar carrossel com:
+
+- Setas.
+- Navegação por pontos.
+- Swipe no celular.
+- Transições suaves.
+
+Deixar avaliações organizadas em arquivo editável.
+
+Não criar nomes, depoimentos, notas ou datas fictícios.
+
+Botão:
+
+"Deixe sua avaliação no Google"
+
+Utilizar o link informado pelo responsável pelo projeto.
+
+Se o link direto de uma avaliação individual não estiver disponível, direcionar ao perfil oficial.
+
+#### 10.11 Mapa e contato
+
+Abaixo das avaliações, apresentar mapa incorporado do Google Maps, com carregamento lazy.
+
+Endereço:
+
+Rua Stecca Pelegrini, Jardim Santa Lúcia, Campinas - SP.
+
+Não inventar número, CEP ou coordenadas.
+
+Ao lado do mapa:
+
+- Endereço.
+- WhatsApp (19) 9 8315-5772.
+- E-mail oficial, após confirmação.
+- Horário de atendimento, após confirmação.
+- Botão Como Chegar.
+
+#### 10.12 FAQ
+
+Criar acordeão com respostas completas e honestas.
+
+Perguntas:
+
+- Quanto posso economizar na conta de luz?
+- Qual é o prazo de instalação?
+- Como funciona o financiamento?
+- E quando chove ou não há sol?
+- Preciso trocar o relógio de energia?
+- Qual é a garantia dos equipamentos?
+- Como funciona a manutenção?
+- Vocês atendem minha cidade?
+- O que é o Mercado Livre de Energia?
+
+Não inventar prazos, garantias ou condições contratuais.
+
+#### 10.13 CTA final
+
+Criar uma seção visualmente impactante com imagem de fundo, overlay e parallax moderado.
+
+Texto:
+
+"Comece a transformar sua conta de luz em uma oportunidade de economia."
+
+Botão de WhatsApp.
+
+#### 10.14 Rodapé
+
+Rodapé escuro, organizado em colunas:
+
+- Logo discreto.
+- Descrição da empresa.
+- Serviços.
+- Áreas atendidas.
+- Links principais.
+- Contato.
+- WhatsApp.
+- Instagram, se confirmado.
+- Link de avaliações Google.
+- Política de Privacidade.
+- © com ano dinâmico.
+
+### 11. PÁGINA /MEUS-PROJETOS
+
+Criar página de portfólio com identidade visual própria.
+
+Hero:
+
+"Projetos que já geram economia real"
+
+Subtítulo:
+
+"Conheça algumas instalações residenciais e empresariais realizadas pela 4L Energia Solar."
+
+Exibir indicadores:
+
+- +200 clientes atendidos.
+- Quase 10 anos de experiência.
+
+Filtros:
+
+- Todos.
+- Residencial.
+- Empresarial.
+
+Cada projeto deve ter:
+
+- Nome.
+- Categoria.
+- Cidade.
+- Bairro.
+- Potência em kWp.
+- Economia mensal informada.
+- Fotografia real.
+- Botão Ver Detalhes.
+
+Ao clicar, abrir modal acessível ou página de detalhes, com galeria de imagens.
+
+DADOS INICIAIS DO PORTFÓLIO:
+
+1. Projeto Empresarial Lindóia.
+Local: Bairro Lajeado, Lindóia-SP.
+Potência: 25 kWp.
+Economia informada: R$ 2.800/mês.
+
+2. José Cardoso Bar e Mercearia.
+Local: Bairro Cardoso Residencial, Serra Negra-SP.
+Potência: 15 kWp.
+Economia informada: R$ 1.800/mês.
+
+3. Residência Lidiane.
+Local: Bairro Mostardas, Monte Alegre do Sul-SP.
+Potência: 6 kWp.
+Economia informada: R$ 280/mês.
+
+4. Quitanda do Claudinho.
+Local: Bairro Mostardas, Monte Alegre do Sul-SP.
+Potência: 10 kWp.
+Economia informada: R$ 950/mês.
+
+Os valores acima são informações fornecidas pela empresa e devem ser identificados como resultados informados, não como garantias para novos clientes.
+
+Manter os demais projetos existentes, caso seja possível recuperá-los do site antigo.
+
+Criar arquivo separado, como src/data/projects.ts, para permitir edição simples.
+
+Preparar o componente para substituir fotografias sem modificar o código principal.
+
+### 12. PÁGINA /MERCADO-LIVRE
+
+Landing page B2B especializada.
+
+Hero:
+
+"Mercado Livre de Energia para sua Empresa"
+
+Imagem de fundo com ambiente empresarial, instalações industriais ou energia ao pôr do sol.
+
+Explicar:
+
+- O que é o Mercado Livre de Energia.
+- Como funciona a contratação.
+- Quem pode migrar.
+- Quais empresas podem se beneficiar.
+- Diferença entre mercado regulado e livre.
+- Etapas da migração.
+- Cuidados na análise de contratos.
+
+Público comercial inicial:
+
+Empresas com despesas de energia próximas ou superiores a R$ 9 mil mensais.
+
+Deixar claro que esse valor é uma referência comercial e que a elegibilidade depende das características da unidade consumidora e das regras regulatórias aplicáveis.
+
+Benefícios:
+
+- Possibilidade de economia.
+- Previsibilidade de custos.
+- Possibilidade de contratação de energia renovável.
+- Gestão estratégica de despesas.
+
+Não afirmar economia garantida de 45%.
+
+O percentual somente poderá ser divulgado se houver comprovação e validação da empresa.
+
+Criar CTA:
+
+"Migrar para o Mercado Livre"
+
+Abrir WhatsApp com mensagem específica.
+
+Criar seção de cases preparada para receber informações reais.
+
+Não publicar depoimentos antigos sem comprovação, incluindo nomes fictícios, empresas fictícias e percentuais não verificados.
+
+FAQ específico e CTA final.
+
+### 13. PÁGINA /SOBRE
+
+Criar uma página institucional apresentando a 4L Energia Solar.
+
+Utilizar apenas informações confirmadas.
+
+Abordar:
+
+- História e experiência.
+- Atuação residencial e empresarial.
+- Atendimento regional.
+- Compromisso com projetos tecnicamente adequados.
+- Processo de atendimento.
+- Contato.
+
+Não inventar fundadores, certificações, quantidade de funcionários ou histórias empresariais.
+
+### 14. POLÍTICA DE PRIVACIDADE E LGPD
+
+Criar página de Política de Privacidade.
+
+Incluir informações sobre:
+
+- Dados coletados em formulários.
+- Finalidade de uso.
+- Contato via WhatsApp.
+- Ferramentas de análise.
+- Cookies.
+- Compartilhamento com serviços externos.
+- Direitos dos titulares.
+- Canal de contato para solicitações.
+
+Criar aviso discreto de cookies, com opções de consentimento quando houver tecnologias não essenciais.
+
+Não disparar ferramentas de publicidade ou rastreamento antes do consentimento quando este for exigido.
+
+### 15. SEO TÉCNICO
+
+SEO é uma prioridade central deste projeto.
+
+Cada página deve possuir:
+
+- Title exclusivo.
+- Meta description exclusiva.
+- Um único H1.
+- Hierarquia lógica H2/H3.
+- Canonical.
+- Open Graph.
+- Twitter Card.
+- Imagem OG apropriada.
+- HTML semântico.
+- Breadcrumbs.
+- Links internos descritivos.
+- Alt textual nas imagens.
+- Largura e altura das imagens.
+- Lang="pt-BR".
+
+SEO da Home:
+
+Foco principal em energia solar em Campinas e região, energia solar residencial e comercial.
+
+Trabalhar naturalmente variações como:
+
+- Energia solar.
+- Painéis solares.
+- Sistema fotovoltaico.
+- Instalação de energia solar.
+- Energia solar residencial.
+- Energia solar comercial.
+- Energia solar para empresas.
+- Financiamento de energia solar.
+- Economia na conta de luz.
+- Mercado Livre de Energia.
+
+Não utilizar repetição artificial de palavras-chave.
+
+#### Dados estruturados
+
+Implementar quando aplicável:
+
+- Organization.
+- LocalBusiness ou tipo específico compatível.
+- WebSite.
+- BreadcrumbList.
+- Service.
+- FAQPage, quando a página tiver perguntas e respostas pertinentes.
+
+Criar uma entidade empresarial consistente.
+
+Endereço sempre referente à sede real em Campinas.
+
+Utilizar as cidades atendidas em areaServed, sem sugerir que a empresa possui filiais nessas localidades.
+
+Não inserir AggregateRating ou Review para tentar obter estrelas nos resultados orgânicos da própria empresa. As avaliações podem ser apresentadas visualmente no site, com links para o Google.
+
+Os dados estruturados devem corresponder exatamente ao conteúdo visível.
+
+Não prometer resultados enriquecidos do Google apenas pela implementação de schema.
+
+### 16. SEO LOCAL E PREPARAÇÃO PARA AS PÁGINAS DE CIDADES
+
+Preparar a arquitetura para adicionar, na próxima etapa, as seguintes rotas:
+
+- /energia-solar-socorro
+- /energia-solar-aguas-de-lindoia
+- /energia-solar-lindoia
+- /energia-solar-amparo
+- /energia-solar-campinas
+- /energia-solar-indaiatuba
+
+Essas páginas serão produzidas separadamente, com conteúdo próprio.
+
+Criar componentes reutilizáveis para:
+
+- Hero local.
+- Breadcrumbs.
+- Informações comerciais.
+- Projetos regionais.
+- FAQ.
+- CTA de WhatsApp.
+- SEO e dados estruturados.
+
+Não criar textos genéricos ou páginas vazias nesta etapa.
+
+### 17. PRÉ-RENDERIZAÇÃO E INDEXAÇÃO
+
+NÃO entregar apenas uma SPA que dependa de JavaScript para renderizar o conteúdo principal.
+
+Implementar pré-renderização estática compatível com React e Vite.
+
+Avaliar uma solução estável de SSG/prerenderização que permita gerar HTML individual para cada rota.
+
+Cada rota deverá disponibilizar no HTML inicial:
+
+- Conteúdo principal.
+- H1.
+- Textos.
+- Metadados.
+- Canonical.
+- Dados estruturados.
+- Links internos.
+
+Garantir que as páginas abram diretamente por suas URLs.
+
+O sitemap deverá conter somente páginas indexáveis e URLs canônicas.
+
+Não utilizar um fallback que devolva a Home com status 200 para qualquer URL inexistente.
+
+A página 404 deve funcionar corretamente.
+
+### 18. PERFORMANCE E CORE WEB VITALS
+
+Meta de qualidade: buscar Lighthouse 90+ em desempenho, acessibilidade, boas práticas e SEO, sem garantir uma pontuação que dependa de condições externas.
+
+Implementar:
+
+- Imagens WebP ou AVIF quando adequado.
+- Lazy loading abaixo da dobra.
+- Dimensões explícitas nas imagens.
+- Preload apenas de recursos realmente prioritários.
+- Fontes otimizadas.
+- Code splitting quando útil.
+- Carregamento eficiente de componentes.
+- Redução de JavaScript desnecessário.
+- Evitar layout shift.
+- Evitar animações que bloqueiem a rolagem.
+
+Não carregar mapas e scripts de terceiros desnecessariamente antes de serem necessários.
+
+### 19. GOOGLE ANALYTICS, TAG MANAGER E CONVERSÕES
+
+Preparar integração por variáveis de ambiente.
+
+Variáveis sugeridas:
+
+- VITE_GA4_ID.
+- VITE_GTM_ID.
+- VITE_META_PIXEL_ID.
+
+Não inventar IDs.
+
+Registrar eventos:
+
+- Clique no WhatsApp.
+- Envio da calculadora.
+- Clique no CTA do Mercado Livre.
+- Clique em Como Chegar.
+- Solicitação de orçamento.
+
+Evitar registrar informações pessoais, nomes ou telefones nos parâmetros de analytics.
+
+Centralizar os eventos em um módulo organizado.
+
+### 20. WHATSAPP
+
+Número oficial:
+
+(19) 9 8315-5772.
+
+Utilizar o formato internacional correto nos links wa.me.
+
+Criar mensagens contextualizadas conforme a origem:
+
+- Home.
+- Calculadora.
+- Projetos.
+- Mercado Livre.
+- Páginas de cidades.
+
+Criar botão flutuante em todas as páginas.
+
+Animação de pulso discreta.
+
+Garantir acessibilidade, boa posição e ausência de sobreposição com elementos importantes do celular.
+
+### 21. CLOUDFARE PAGES E ENTREGA
+
+Preparar o projeto para GitHub e Cloudflare Pages.
+
+Build:
+
+npm run build
+
+Diretório de publicação:
+
+dist
+
+Criar e configurar:
+
+- public/robots.txt.
+- sitemap.xml.
+- public/_headers.
+- public/_redirects, somente quando compatível com as rotas pré-renderizadas.
+- README.md.
+
+No README explicar:
+
+- Instalação local.
+- Comandos de desenvolvimento.
+- Build.
+- Variáveis de ambiente.
+- Como editar projetos.
+- Como editar avaliações.
+- Como editar perguntas frequentes.
+- Como adicionar páginas locais.
+- Como configurar o Cloudflare Pages.
+- Como apontar o domínio 4lenergiasolar.com.br.
+- Como preservar as URLs existentes.
+
+Incluir headers básicos de segurança e políticas de cache adequadas, sem bloquear recursos necessários ao funcionamento do site.
+
+Não alterar DNS ou realizar migração de domínio automaticamente.
+
+### 22. ORGANIZAÇÃO DOS ARQUIVOS
+
+Manter arquitetura clara, por exemplo:
+
+src/
+  components/
+  pages/
+  data/
+  hooks/
+  layouts/
+  lib/
+  styles/
+  types/
+
+Separar:
+
+- Projetos.
+- Avaliações.
+- FAQ.
+- Dados de contato.
+- Dados de SEO.
+- Configurações de integração.
+- Conteúdo institucional.
+
+Evitar colocar todo o projeto em um único arquivo.
+
+### 23. CRITÉRIOS DE ACEITE
+
+O projeto somente poderá ser considerado concluído quando:
+
+[ ] Home moderna e responsiva.
+
+[ ] Páginas /mercado-livre e /meus-projetos funcionando diretamente.
+
+[ ] Página /sobre.
+
+[ ] Política de Privacidade.
+
+[ ] Hero com imagens adequadas.
+
+[ ] Identidade visual fiel ao logo.
+
+[ ] Animações funcionando sem excesso.
+
+[ ] Calculadora funcional com premissas documentadas.
+
+[ ] WhatsApp funcionando em todas as páginas.
+
+[ ] Projetos reais organizados em arquivo editável.
+
+[ ] Avaliações reais organizadas e clicáveis.
+
+[ ] Mapa de Campinas.
+
+[ ] FAQ funcional.
+
+[ ] SEO técnico implementado.
+
+[ ] HTML pré-renderizado por rota.
+
+[ ] Sitemap e robots.
+
+[ ] Página 404 real.
+
+[ ] Build sem erros.
+
+[ ] Layout testado em celular e desktop.
+
+[ ] Preparação para as seis páginas locais.
+
+[ ] Compatibilidade com Cloudflare Pages.
+
+### 24. INSTRUÇÃO INICIAL — NÃO COMECE A CODIFICAR IMEDIATAMENTE
+
+Antes de desenvolver qualquer arquivo, faça uma análise completa do briefing e dos anexos.
+
+Primeiro, apresente:
+
+1. Resumo objetivo do site que será construído.
+2. Proposta de identidade visual.
+3. Arquitetura das páginas e rotas.
+4. Arquitetura técnica e estratégia de pré-renderização.
+5. Lista das funcionalidades que serão implementadas.
+6. Lista de informações que ainda precisam ser confirmadas.
+7. Lista dos arquivos e fotografias adicionais que serão úteis.
+8. Eventuais riscos técnicos ou incompatibilidades que você identificou.
+
+Não faça perguntas sobre informações que já foram fornecidas neste briefing.
+
+Não invente informações ausentes.
+
+Aguarde minha autorização para iniciar a implementação.
+
+Depois da autorização, desenvolva o projeto completo, seguindo as especificações acima e validando cada etapa.
+
+IMPORTANTE: quero um projeto funcional e executável, não apenas um protótipo visual, uma demonstração ou uma descrição de como o site poderia ser construído.

@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --brand-blue: #1D4ED8;
+    --brand-dark-blue: #0B1B33;
+    --brand-solar: #F59E0B;
+    --brand-green: #16A34A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #0B1B33;
+    background-color: #F8FAFC;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Subtly animated shimmer for strategic headlines */
+.title-shimmer {
+  background: linear-gradient(
+    110deg,
+    #0B1B33 20%,
+    #2563EB 40%,
+    #F59E0B 50%,
+    #2563EB 60%,
+    #0B1B33 80%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 8s ease-in-out infinite;
+}
+
+.title-shimmer-light {
+  background: linear-gradient(
+    110deg,
+    #FFFFFF 20%,
+    #93C5FD 40%,
+    #FDE68A 50%,
+    #93C5FD 60%,
+    #FFFFFF 80%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 55s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover,
+.animate-marquee-paused {
+  animation-play-state: paused !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .title-shimmer, .title-shimmer-light {
+    animation: none;
+    background: none;
+    color: inherit;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+  }
+  .animate-marquee {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+

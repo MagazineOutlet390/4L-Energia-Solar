@@ -1,0 +1,18 @@
+# Static direct access and friendly URLs for Cloudflare Pages
+/mercado-livre            /mercado-livre/index.html            200
+/meus-projetos            /meus-projetos/index.html            200
+/sobre                    /sobre/index.html                    200
+/politica-de-privacidade  /politica-de-privacidade/index.html  200
+/blog                     /blog/index.html                     200
+/blog/*                   /blog/:splat/index.html              200
+
+# Local City Pages
+/energia-solar-socorro           /energia-solar-socorro/index.html           200
+/energia-solar-aguas-de-lindoia  /energia-solar-aguas-de-lindoia/index.html  200
+/energia-solar-lindoia           /energia-solar-lindoia/index.html           200
+/energia-solar-amparo            /energia-solar-amparo/index.html            200
+/energia-solar-campinas          /energia-solar-campinas/index.html          200
+/energia-solar-indaiatuba        /energia-solar-indaiatuba/index.html        200
+
+# Client-side router fallback for dynamic requests
+/*                        /index.html                          200
