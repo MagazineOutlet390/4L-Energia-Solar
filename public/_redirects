@@ -1,10 +1,16 @@
-# Static direct access and friendly URLs for Cloudflare Pages
+# Static direct access and friendly URLs for Cloudflare Pages & Workers Static Assets
 /mercado-livre            /mercado-livre/index.html            200
 /meus-projetos            /meus-projetos/index.html            200
 /sobre                    /sobre/index.html                    200
 /politica-de-privacidade  /politica-de-privacidade/index.html  200
 /blog                     /blog/index.html                     200
-/blog/*                   /blog/:splat/index.html              200
+
+# Blog Articles (explicit rules to avoid Cloudflare strip '.html'/'/index' wildcard loop)
+/blog/como-funciona-a-energia-solar                      /blog/como-funciona-a-energia-solar/index.html                      200
+/blog/energia-solar-para-empresas                        /blog/energia-solar-para-empresas/index.html                        200
+/blog/como-calcular-a-economia-com-paineis-solares       /blog/como-calcular-a-economia-com-paineis-solares/index.html       200
+/blog/mercado-livre-de-energia-vale-a-pena               /blog/mercado-livre-de-energia-vale-a-pena/index.html               200
+/blog/energia-solar-no-circuito-das-aguas-guia-regional  /blog/energia-solar-no-circuito-das-aguas-guia-regional/index.html  200
 
 # Local City Pages
 /energia-solar-socorro           /energia-solar-socorro/index.html           200
@@ -14,5 +20,6 @@
 /energia-solar-campinas          /energia-solar-campinas/index.html          200
 /energia-solar-indaiatuba        /energia-solar-indaiatuba/index.html        200
 
-# Unknown URL fallback (true 404 status with static 404 page)
-/*                        /404.html                            404
+# Unknown URLs: handled natively by dist/404.html with HTTP 404
+# (Cloudflare Workers via wrangler.jsonc not_found_handling="404-page"; Cloudflare Pages natively)
+

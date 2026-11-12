@@ -286,6 +286,21 @@ ${allRoutes
   fs.writeFileSync(path.join(publicDir, "sitemap.xml"), sitemapXml, "utf-8");
   console.log(`✅ sitemap.xml gerado com sucesso com ${allRoutes.length} URLs canônicas!`);
 
+  // 11. Sincroniza regras exatas de novos artigos do blog em dist/_redirects (sem curingas em loop)
+  const distRedirectsPath = path.join(DIST_DIR, "_redirects");
+  if (fs.existsSync(distRedirectsPath)) {
+    let redirectsContent = fs.readFileSync(distRedirectsPath, "utf-8");
+    const missingBlogRules = BLOG_POSTS.filter(
+      (post) => !redirectsContent.includes(`/blog/${post.slug} `) && !redirectsContent.includes(`/blog/${post.slug}\t`)
+    ).map((post) => `/blog/${post.slug}  /blog/${post.slug}/index.html  200`);
+
+    if (missingBlogRules.length > 0) {
+      redirectsContent = `${redirectsContent.trimEnd()}\n\n# Auto-synced blog posts\n${missingBlogRules.join("\n")}\n`;
+      fs.writeFileSync(distRedirectsPath, redirectsContent, "utf-8");
+      console.log(`✅ _redirects sincronizado com ${missingBlogRules.length} novo(s) artigo(s) do blog.`);
+    }
+  }
+
   console.log("🎉 Auditoria e pré-renderização estática de metadados concluída!");
 }
 
