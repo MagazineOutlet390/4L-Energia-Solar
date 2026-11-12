@@ -80,7 +80,7 @@ Insira um novo objeto no início do array com a seguinte estrutura:
   category: "Energia Solar Residencial", // Uma das 8 categorias oficiais
   categorySlug: "energia-solar-residencial",
   tags: ["Economia", "Painéis Solares", "CPFL"],
-  coverImage: "/assets/projects/andre-pereira-campinas.jpeg", // Imagem em public/
+  coverImage: "/assets/blog/como-funciona-solar.jpg", // Imagem em public/
   coverImageAlt: "Descrição detalhada da imagem para acessibilidade e SEO",
   readingTime: "6 min de leitura",
   featured: false, // Defina true se desejar destacar no topo do blog
@@ -211,11 +211,12 @@ Basta registrar a nova rota no objeto `CORE_PAGES_METADATA`:
 Ao executar `npm run build`, a nova página será automaticamente pré-renderizada e adicionada ao `sitemap.xml`.
 
 ### 5. Como Configurar Metadados de um Novo Artigo do Blog
-Cada novo artigo cadastrado em `src/data/blogPosts.ts` herda automaticamente a estrutura de metadados via função `getBlogPostMetadata(post)`:
-- O **SEO Title** é gerado como `${post.title} | Blog 4L Energia Solar`.
-- A **Meta Description** utiliza `post.description`.
-- A **Open Graph Image** utiliza `post.coverImage`.
+Cada novo artigo cadastrado em `src/data/blogPosts.ts` herda automaticamente a estrutura de metadados via função `getBlogPostMetadata(post)` em `src/data/seoMetadata.ts`:
+- O **SEO Title** prioriza `post.seoTitle` (recomendado ~50–60 caracteres) com fallback automático para `${post.title} | Blog 4L Energia Solar`.
+- A **Meta Description** prioriza `post.seoDescription` (recomendado ~140–160 caracteres) com fallback para `post.description`.
+- O **Open Graph Title / Description** priorizam `post.ogTitle` e `post.ogDescription` (ou `seoTitle`/`seoDescription`).
+- A **Open Graph Image** utiliza `post.ogImage || post.coverImage` (padrão **1200 × 630 px** em `public/assets/blog/`).
 - A URL canônica aponta para `https://4lenergiasolar.com.br/blog/${post.slug}`.
 - O schema JSON-LD `BlogPosting` é embutido no HTML com autor, data e publisher.
-Para personalizar um artigo específico, basta ajustar os campos no próprio objeto do artigo em `src/data/blogPosts.ts`.
+Para personalizar um artigo específico, ajuste `seoTitle`, `seoDescription`, `ogImage` e `ogImageAlt` diretamente no objeto do artigo em `src/data/blogPosts.ts`. Rotas inexistentes retornam `404.html` com `noindex, nofollow`.
 

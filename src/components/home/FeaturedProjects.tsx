@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Zap, MapPin, TrendingUp, ArrowRight } from "lucide-react";
+import { ShimmerText } from "../common/ShimmerText";
 import { PROJECTS } from "../../data/projects";
 
 export const FeaturedProjects: React.FC = () => {
@@ -15,7 +16,7 @@ export const FeaturedProjects: React.FC = () => {
               Resultados Reais
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-              Projetos em Destaque
+              <ShimmerText variant="dark">Projetos em Destaque</ShimmerText>
             </h2>
             <p className="text-base text-slate-600 mt-2 max-w-xl">
               Conheça algumas instalações residenciais e empresariais executadas pela 4L Energia Solar com economia informada pelos próprios clientes.
@@ -36,13 +37,13 @@ export const FeaturedProjects: React.FC = () => {
               key={project.id}
               className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group"
             >
-              <div className="relative h-56 overflow-hidden bg-slate-950">
+              <div className="relative aspect-[4/3] overflow-hidden bg-slate-950">
                 <img
                   src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  width={600}
-                  height={400}
+                  alt={project.imageAlt}
+                  className={`w-full h-full object-cover ${project.imagePosition || "object-center"} group-hover:scale-105 transition-transform duration-500`}
+                  width={800}
+                  height={600}
                   loading="lazy"
                 />
                 <div className="absolute top-3 left-3">

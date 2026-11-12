@@ -40,8 +40,8 @@ export const CITIES_DATA: CityData[] = [
     slug: "energia-solar-socorro",
     city: "Socorro",
     region: "Circuito das Águas",
-    title: "Energia Solar em Socorro | 4L Energia Solar",
-    metaDescription: "Instalação de energia solar em Socorro para pousadas, hotéis-fazenda, chácaras e residências. Reduza sua conta de luz com a 4L Energia Solar. Solicite orçamento.",
+    title: "Energia Solar em Socorro (SP) | 4L Energia Solar",
+    metaDescription: "Projetos de energia solar em Socorro para pousadas, hotéis-fazenda, chácaras e residências. Homologação CPFL e orçamento com a 4L Energia Solar.",
     h1: "Energia Solar em Socorro: Economia para Pousadas, Chácaras e Residências",
     heroSubtitle: "Projetos fotovoltaicos sob medida para o setor turístico, propriedades rurais e moradores de Socorro.",
     typewriterPhrases: [
@@ -147,7 +147,7 @@ export const CITIES_DATA: CityData[] = [
     city: "Águas de Lindóia",
     region: "Circuito das Águas",
     title: "Energia Solar em Águas de Lindóia | 4L Energia Solar",
-    metaDescription: "Projetos de energia solar em Águas de Lindóia para hotéis, pousadas e residências. Eficiência energética e redução na conta de luz. Peça sua avaliação.",
+    metaDescription: "Instalação de energia solar em Águas de Lindóia para hotéis, pousadas e residências. Eficiência e redução na conta de luz com a 4L Energia Solar.",
     h1: "Energia Solar em Águas de Lindóia: Eficiência para Hotelaria e Residências",
     heroSubtitle: "Soluções fotovoltaicas dimensionadas para o parque hoteleiro, comércio e casas de veraneio.",
     typewriterPhrases: [
@@ -252,8 +252,8 @@ export const CITIES_DATA: CityData[] = [
     slug: "energia-solar-lindoia",
     city: "Lindóia",
     region: "Circuito das Águas",
-    title: "Energia Solar em Lindóia | 4L Energia Solar",
-    metaDescription: "Instalação de energia solar em Lindóia com histórico comprovado de 25 kWp no Bairro Lajeado. Projetos comerciais e residenciais com a 4L Energia Solar.",
+    title: "Energia Solar em Lindóia (SP) | 4L Energia Solar",
+    metaDescription: "Energia solar em Lindóia para empresas, comércios e residências. Projeto de 25 kWp no Bairro Lajeado e atendimento técnico da 4L Energia Solar.",
     h1: "Energia Solar em Lindóia: Experiência Real e Economia Comprovada",
     heroSubtitle: "Projetos fotovoltaicos com histórico comprovado no Bairro Lajeado e atendimento técnico na Capital das Águas Minerais.",
     typewriterPhrases: [
@@ -365,8 +365,8 @@ export const CITIES_DATA: CityData[] = [
     slug: "energia-solar-amparo",
     city: "Amparo",
     region: "Circuito das Águas",
-    title: "Energia Solar em Amparo | 4L Energia Solar",
-    metaDescription: "Projetos fotovoltaicos em Amparo para empresas, galpões, propriedades rurais e residências. Economia real na conta de luz com a 4L Energia Solar.",
+    title: "Energia Solar em Amparo (SP) | 4L Energia Solar",
+    metaDescription: "Projetos fotovoltaicos em Amparo para empresas, galpões, propriedades rurais e residências. Reduza gastos com energia elétrica com a 4L Energia Solar.",
     h1: "Energia Solar em Amparo: Soluções Comerciais, Industriais e Rurais",
     heroSubtitle: "Projetos de engenharia fotovoltaica e assessoria em Mercado Livre para a capital histórica do Circuito das Águas.",
     typewriterPhrases: [
@@ -471,8 +471,8 @@ export const CITIES_DATA: CityData[] = [
     slug: "energia-solar-campinas",
     city: "Campinas",
     region: "Sede Operacional",
-    title: "Energia Solar em Campinas | 4L Energia Solar",
-    metaDescription: "Instalação de energia solar fotovoltaica em Campinas com atendimento direto da nossa sede no Jardim Santa Lúcia. Projetos homologados na CPFL pela 4L.",
+    title: "Energia Solar em Campinas (SP) | 4L Energia Solar",
+    metaDescription: "Empresa de energia solar com sede em Campinas no Jardim Santa Lúcia. Projetos residenciais e comerciais homologados na CPFL pela 4L Energia Solar.",
     h1: "Energia Solar em Campinas: Engenharia e Instalação na Cidade-Sede da 4L",
     heroSubtitle: "Projetos fotovoltaicos residenciais e empresariais com atendimento ágil e homologação completa na CPFL Paulista.",
     typewriterPhrases: [
@@ -578,7 +578,7 @@ export const CITIES_DATA: CityData[] = [
     city: "Indaiatuba",
     region: "Região Metropolitana",
     title: "Energia Solar em Indaiatuba | 4L Energia Solar",
-    metaDescription: "Soluções em energia solar para indústrias, galpões, condomínios e empresas em Indaiatuba. Engenharia especializada e Mercado Livre com a 4L.",
+    metaDescription: "Soluções em energia solar para indústrias, galpões, condomínios e empresas em Indaiatuba. Projetos fotovoltaicos e Mercado Livre com a 4L Energia Solar.",
     h1: "Energia Solar em Indaiatuba: Tecnologia para Indústrias, Galpões e Residências",
     heroSubtitle: "Projetos de engenharia fotovoltaica de alta eficiência para um dos maiores polos econômicos da RMC.",
     typewriterPhrases: [

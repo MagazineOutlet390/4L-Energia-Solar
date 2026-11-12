@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Building2, ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ShimmerText } from "../common/ShimmerText";
 
 export const MercadoLivreHighlight: React.FC = () => {
   return (
@@ -16,7 +17,8 @@ export const MercadoLivreHighlight: React.FC = () => {
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-                Reduza seus custos de energia e avalie as oportunidades do Mercado Livre de Energia para sua empresa.
+                Reduza seus custos de energia e avalie as oportunidades do{" "}
+                <ShimmerText variant="light">Mercado Livre de Energia para sua empresa.</ShimmerText>
               </h2>
 
               <p className="text-base text-slate-300 leading-relaxed">

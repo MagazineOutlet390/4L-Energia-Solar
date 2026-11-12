@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight, Sun } from "lucide-react";
+import { ShimmerText } from "../common/ShimmerText";
 
 export const CoverageAreas: React.FC = () => {
   const cities = [
@@ -49,7 +50,7 @@ export const CoverageAreas: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-slate-50 border-b border-slate-200">
+    <section id="areas-atendimento" className="py-20 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold uppercase tracking-wider mb-2">
@@ -57,7 +58,7 @@ export const CoverageAreas: React.FC = () => {
             <span>Presença Regional Consolidada</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-4">
-            Áreas de Atendimento no Interior Paulista
+            <ShimmerText variant="dark">Áreas de Atendimento no Interior Paulista</ShimmerText>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             Com base operacional estabelecida em Campinas/SP, nossa equipe técnica atua diretamente em toda a Região Metropolitana e no Circuito das Águas Paulista.

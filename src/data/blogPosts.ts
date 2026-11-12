@@ -16,12 +16,20 @@ export interface BlogPost {
   content: string;
   ctaText?: string;
   ctaTarget?: "whatsapp" | "calculator" | "mercado-livre";
+  seoTitle?: string;
+  seoDescription?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
 }
 
 export const BLOG_POSTS: BlogPost[] = [
   {
     title: "Como Funciona a Energia Solar: Guia Completo do Efeito Fotovoltaico à Rede Elétrica",
     slug: "como-funciona-a-energia-solar",
+    seoTitle: "Como Funciona a Energia Solar Fotovoltaica | 4L Blog",
+    seoDescription: "Entenda o funcionamento de um sistema solar on-grid: do efeito fotovoltaico nos módulos e papel do inversor à compensação de créditos na CPFL.",
     description: "Entenda o funcionamento técnico de um sistema fotovoltaico conectado à rede, desde a conversão de fótons em corrente elétrica até a compensação de créditos na CPFL.",
     excerpt: "Descubra como os fótons solares são convertidos em eletricidade limpa nos módulos de silício, transformados pelo inversor e injetados na rede da concessionária.",
     publishedAt: "2026-10-15",
@@ -66,6 +74,8 @@ Substitui o relógio convencional após a vistoria técnica da concessionária. 
 3. **Créditos de energia (SCEE)**: A energia injetada é contabilizada pela concessionária e convertida em créditos de energia (kWh). Esses créditos têm validade regulatória de até 60 meses e abatem o consumo noturno ou em dias de baixa radiação.
 4. **Abatimento na fatura mensal**: No fechamento da conta, a distribuidora compensa os kWh consumidos com os créditos acumulados, restando ao consumidor arcar somente com a taxa mínima de disponibilidade e a taxa de iluminação pública.
 
+Para entender em detalhes como esses créditos e a Lei 14.300 afetam o valor da fatura, leia nosso guia sobre [como calcular a economia com painéis solares](/blog/como-calcular-a-economia-com-paineis-solares) ou utilize o [simulador fotovoltaico da 4L Energia Solar](/#calculadora) e conheça [projetos reais já em operação](/meus-projetos).
+
 ## Fontes Técnicas e Regulatórias
 - **ANEEL (Agência Nacional de Energia Elétrica)**: Resolução Normativa nº 1.000/2021 e Lei Federal nº 14.300/2022 (Marco Legal da GD).
 - **ABSOLAR (Associação Brasileira de Energia Solar Fotovoltaica)**: Relatórios anuais de geração distribuída no Brasil.
@@ -74,6 +84,8 @@ Substitui o relógio convencional após a vistoria técnica da concessionária. 
   {
     title: "Energia Solar para Empresas: Redução de Custos Fixos, Payback e Competitividade",
     slug: "energia-solar-para-empresas",
+    seoTitle: "Energia Solar para Empresas: Payback e Custos | 4L Blog",
+    seoDescription: "Análise de energia solar para empresas em Campinas e região: redução de despesas operacionais, payback estimado e previsibilidade na conta de luz.",
     description: "Análise técnica e financeira de sistemas fotovoltaicos para comércios, galpões e indústrias em Campinas e Circuito das Águas. Como reduzir despesas operacionais e blindar o caixa contra reajustes tarifários.",
     excerpt: "Entenda por que a energia solar se tornou um investimento financeiro de alto retorno para empresas, reduzindo despesas operacionais e oferecendo previsibilidade de longo prazo.",
     publishedAt: "2026-10-22",
@@ -111,17 +123,19 @@ Clientes e parceiros corporativos valorizam organizações que adotam práticas 
 
 ## Casos Práticos de Aplicação na Região
 
-- **Pousadas e Hotéis no Circuito das Águas**: Alto consumo com aquecimento de água, ar-condicionado e lavanderia em cidades como Águas de Lindóia e Serra Negra.
-- **Quitandas, Mercados e Refrigeração**: Como documentado no caso da *Quitanda do Claudinho* em Monte Alegre do Sul (10 kWp, economia informada de R$ 950/mês), a refrigeração constante torna a energia solar ideal para compensar a carga permanente.
-- **Empresas e Oficinas em Lindóia e Campinas**: Instalações como o *Projeto Empresarial Lindóia* (25 kWp, com economia informada de R$ 2.800/mês) viabilizam estabilidade financeira comprovada.
+- **Pousadas e Hotéis no Circuito das Águas**: Alto consumo com aquecimento de água, ar-condicionado e lavanderia em cidades como [Águas de Lindóia](/energia-solar-aguas-de-lindoia) e Serra Negra.
+- **Quitandas, Mercados e Refrigeração**: Como documentado no caso da *Quitanda do Claudinho* em Monte Alegre do Sul (10 kWp, economia informada de R$ 950/mês) e do *José Cardoso Bar e Mercearia* em Serra Negra (15 kWp, economia informada de R$ 1.800/mês), presentes em nosso [portfólio de projetos realizados](/meus-projetos), a refrigeração constante torna a energia solar ideal para compensar a carga permanente.
+- **Empresas e Oficinas em Lindóia e Campinas**: Instalações como o *Projeto Empresarial Lindóia* (25 kWp, com economia informada de R$ 2.800/mês), atendidas por nossa engenharia de [energia solar em Lindóia](/energia-solar-lindoia) e [Campinas](/energia-solar-campinas), demonstram estabilidade operacional comprovada.
 
 ## Ressalvas Técnicas de Engenharia
-O dimensionamento corporativo exige análise prévia detalhada da demanda contratada (para unidades do Grupo A), capacidade portante do telhado estrutural, subestação e padrões de entrada da concessionária.
+O dimensionamento corporativo exige análise prévia detalhada da demanda contratada (para unidades do Grupo A), capacidade portante do telhado estrutural, subestação e padrões de entrada da concessionária. Para empresas com faturas mensais a partir de R$ 9 mil em média ou alta tensão, também vale avaliar o serviço de [assessoria em Mercado Livre de Energia](/mercado-livre) ou ler nossa análise sobre [quando o Mercado Livre de Energia vale a pena](/blog/mercado-livre-de-energia-vale-a-pena).
     `
   },
   {
     title: "Como Calcular a Economia com Painéis Solares: Tarifa, Fio B e Regras da Lei 14.300",
     slug: "como-calcular-a-economia-com-paineis-solares",
+    seoTitle: "Como Calcular a Economia com Energia Solar | 4L Blog",
+    seoDescription: "Aprenda a calcular a economia com painéis solares considerando tarifa, custo de disponibilidade, Fio B da Lei 14.300 e irradiação solar regional.",
     description: "Metodologia transparente para simular sua economia real na conta de energia. Entenda o custo de disponibilidade, tarifa de energia e a transição do Marco Legal da GD.",
     excerpt: "Aprenda o passo a passo para calcular a economia real do seu sistema fotovoltaico sem fórmulas mágicas e entendendo cada componente da fatura da concessionária.",
     publishedAt: "2026-10-28",
@@ -163,18 +177,20 @@ Onde:
 
 ## Exemplo Real Simplificado
 
-Considerando um consumo residencial médio de **500 kWh/mês** com padrão bifásico em Campinas:
+Considerando um consumo residencial médio de **500 kWh/mês** com padrão bifásico na área atendida por nosso serviço de [energia solar em Campinas](/energia-solar-campinas):
 - Descontando o custo mínimo de disponibilidade (50 kWh), a meta de geração líquida é de aproximadamente 450 kWh/mês.
 - Com irradiação média de 4,7 HSP e PR de 0,80, a potência estimada do gerador é de aproximadamente **4,0 kWp**.
 - Esse sistema é composto tipicamente por 7 a 8 módulos fotovoltaicos de alta eficiência (550W a 600W cada).
 
 ## A Importância do Estudo Técnico Personalizado
-Cada imóvel possui particularidades: orientação do telhado (preferencialmente Norte, ou Leste/Oeste com pequenos ajustes de inclinação), inclinação das águas, tipo de telha e sombreamento causado por árvores ou construções vizinhas. Por essa razão, a simulação inicial serve como balizador preliminar, sendo indispensável a visita e o projeto técnico assinado por engenheiro habilitado.
+Cada imóvel possui particularidades: orientação do telhado (preferencialmente Norte, ou Leste/Oeste com pequenos ajustes de inclinação), inclinação das águas, tipo de telha e sombreamento causado por árvores ou construções vizinhas. Por essa razão, a [simulação na calculadora solar](/#calculadora) serve como balizador preliminar, complementando a explicação técnica sobre [como funciona a energia solar fotovoltaica](/blog/como-funciona-a-energia-solar) antes da vistoria técnica presencial em Campinas e no [Circuito das Águas Paulista](/blog/energia-solar-no-circuito-das-aguas-guia-regional).
     `
   },
   {
     title: "Mercado Livre de Energia: Como Funciona e Por Que Empresas Acima de R$ 9 Mil Devem Avaliar",
     slug: "mercado-livre-de-energia-vale-a-pena",
+    seoTitle: "Mercado Livre de Energia: Vale a Pena? | 4L Blog",
+    seoDescription: "Guia prático para empresas do Grupo A sobre a migração ao Mercado Livre de Energia (ACL). Regras, segurança jurídica e contas acima de R$ 9 mil.",
     description: "O guia prático para empresas do Grupo A compreenderem a migração para o Ambiente de Contratação Livre (ACL). Diferenças contratuais, segurança jurídica e economia.",
     excerpt: "Descubra como empresas com faturas a partir de R$ 9 mil mensais podem negociar fornecimento diretamente com comercializadoras e obter previsibilidade de custos.",
     publishedAt: "2026-11-01",
@@ -211,15 +227,19 @@ Na prática comercial, empresas com gastos a partir de **R$ 9 mil a R$ 10 mil me
 - **Sem Obras Estruturais no Prédio**: A energia continua chegando pela mesma rede de distribuição física da concessionária; a mudança é exclusivamente comercial e contratual.
 
 ## O Que É Necessário para Migrar?
-1. Estudo de viabilidade técnica e financeira da fatura de energia.
+1. Estudo de viabilidade técnica e financeira da fatura de energia, disponível diretamente em nossa página de [Mercado Livre de Energia para empresas](/mercado-livre).
 2. Denúncia do contrato de fornecimento regulado junto à concessionária (respeitando o prazo regulatório de aviso prévio).
 3. Adequação do sistema de medição e faturamento (SMF) conforme as normas da distribuidora e da CCEE.
 4. Adesão a uma comercializadora varejista qualificada.
+
+Empresas instaladas em polos industriais como [Indaiatuba](/energia-solar-indaiatuba) e [Campinas](/energia-solar-campinas) frequentemente combinam a migração ao ACL com usinas próprias em telhados comerciais — tema que detalhamos também no artigo sobre [energia solar para empresas](/blog/energia-solar-para-empresas).
     `
   },
   {
     title: "Energia Solar no Circuito das Águas e Região: Potencial de Geração e Cuidados Específicos",
     slug: "energia-solar-no-circuito-das-aguas-guia-regional",
+    seoTitle: "Energia Solar no Circuito das Águas Paulista | 4L Blog",
+    seoDescription: "Panorama de irradiação solar, relevo serrano e cuidados técnicos em projetos fotovoltaicos para Socorro, Águas de Lindóia, Serra Negra e Campinas.",
     description: "Particularidades de irradiação, relevo e clima em Campinas, Socorro, Águas de Lindóia, Lindóia, Amparo, Serra Negra e Monte Alegre do Sul.",
     excerpt: "Conheça o panorama da irradiação solar na região do Circuito das Águas Paulista e como as características topográficas influenciam o projeto fotovoltaico.",
     publishedAt: "2026-11-04",
@@ -237,7 +257,7 @@ Na prática comercial, empresas com gastos a partir de **R$ 9 mil a R$ 10 mil me
     content: `
 ## O Cenário Solar do Circuito das Águas Paulista
 
-O Circuito das Águas Paulista — que reúne municípios como **Socorro, Águas de Lindóia, Lindóia, Amparo, Serra Negra e Monte Alegre do Sul**, além da metrópole de **Campinas** e **Indaiatuba** — apresenta excelentes índices de irradiação solar global horizontal, com médias que oscilam entre 4,6 e 4,9 kWh/m²/dia.
+O Circuito das Águas Paulista — que reúne municípios como [Socorro](/energia-solar-socorro), [Águas de Lindóia](/energia-solar-aguas-de-lindoia), [Lindóia](/energia-solar-lindoia), [Amparo](/energia-solar-amparo), Serra Negra e Monte Alegre do Sul, além de [Campinas](/energia-solar-campinas) e [Indaiatuba](/energia-solar-indaiatuba) — apresenta excelentes índices de irradiação solar global horizontal, com médias que oscilam entre 4,6 e 4,9 kWh/m²/dia.
 
 Essa taxa de radiação supera expressivamente os índices de países líderes europeus na transição energética (como Alemanha e Reino Unido), tornando a energia solar um dos investimentos de maior rentabilidade e segurança para moradores e empresários locais.
 
@@ -247,13 +267,13 @@ Essa taxa de radiação supera expressivamente os índices de países líderes e
 Cidades serranas como Serra Negra e Monte Alegre do Sul possuem relevo acidentado e vales. No dimensionamento fotovoltaico, nossos engenheiros avaliam cuidadosamente o horizonte solar e potenciais sombreamentos nas primeiras horas da manhã e finais da tarde, ajustando a inclinação e a disposição das *strings* ou utilizando microinversores para garantir produtividade máxima.
 
 ### 2. Setor Hoteleiro, Gastronômico e Turismo Rural
-A vocação turística de Águas de Lindóia, Lindóia e Socorro concentra consumos elevados com ar-condicionado em chalés, piscinas aquecidas, saunas e cozinhas profissionais. A implantação de sistemas solares reduz diretamente o custo operacional das hospedagens, mantendo a competitividade das tarifas aos turistas.
+A vocação turística de Águas de Lindóia, Lindóia e Socorro concentra consumos elevados com ar-condicionado em chalés, piscinas aquecidas, saunas e cozinhas profissionais. A implantação de sistemas solares reduz diretamente o custo operacional das hospedagens, mantendo a competitividade das tarifas aos turistas — como ocorre nos [projetos comerciais e residenciais entregues na região](/meus-projetos), a exemplo do *Projeto Empresarial Lindóia* (25 kWp).
 
 ### 3. Propriedades Rurais e Chácaras de Recreio
-Conforme relatado na avaliação real do cliente Wesley Vieira, que possuía uma chácara com despesas de aproximadamente R$ 280,00 e hoje paga apenas a taxa mínima, a energia solar atende com perfeição propriedades de veraneio e chácaras com poços artesianos, bombas d'água e iluminação externa contínua.
+Conforme relatado na avaliação real do cliente Wesley Vieira, que possuía uma chácara com despesas de aproximadamente R$ 280,00 e hoje paga apenas a taxa mínima, e na instalação da *Residência Lidiane* em Monte Alegre do Sul (6 kWp, economia informada de R$ 280/mês), a energia solar atende com perfeição propriedades de veraneio e chácaras com poços artesianos, bombas d'água e iluminação externa contínua.
 
 ## Atendimento Local pela 4L Energia Solar
-Com base operacional sediada em Campinas/SP, a 4L Energia Solar atende pessoalmente todas as cidades do Circuito das Águas, oferecendo suporte presencial rápido, vistorias no local e acompanhamento contínuo da geração.
+Com sede operacional estabelecida em Campinas-SP, conforme detalhado na página [Sobre a 4L Energia Solar](/sobre), nossa equipe atende pessoalmente todas as cidades do Circuito das Águas, oferecendo suporte presencial rápido, vistorias no local e acompanhamento contínuo da geração.
     `
   }
 ];

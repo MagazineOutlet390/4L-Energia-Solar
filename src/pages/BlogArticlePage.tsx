@@ -1,12 +1,78 @@
 import React, { useMemo } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { SEOHead } from "../components/common/SEOHead";
+import { ShimmerText } from "../components/common/ShimmerText";
 import { BlogBreadcrumbs } from "../components/blog/BlogBreadcrumbs";
 import { BlogSidebar } from "../components/blog/BlogSidebar";
 import { BlogCard } from "../components/blog/BlogCard";
-import { Calendar, Clock, User, MessageCircle, Calculator, ArrowRight, List, Share2 } from "lucide-react";
-import { BLOG_POSTS, BlogPost } from "../data/blogPosts";
+import { Calendar, User, MessageCircle, Calculator, List } from "lucide-react";
+import { BLOG_POSTS } from "../data/blogPosts";
 import { getWhatsAppLink } from "../data/company";
+
+const renderInlineFormatting = (text: string, keyPrefix: string): React.ReactNode[] => {
+  const tokens: React.ReactNode[] = [];
+  // Matches [label](url), **bold**, or *italic*
+  const pattern = /(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|\*[^*]+\*)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let tokenIdx = 0;
+
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      tokens.push(text.slice(lastIndex, match.index));
+    }
+
+    const token = match[0];
+    if (token.startsWith("[")) {
+      const linkMatch = token.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (linkMatch) {
+        const [, label, href] = linkMatch;
+        const isExternal = href.startsWith("http");
+        tokens.push(
+          isExternal ? (
+            <a
+              key={`${keyPrefix}-a-${tokenIdx++}`}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline underline-offset-2 font-medium"
+            >
+              {label}
+            </a>
+          ) : (
+            <Link
+              key={`${keyPrefix}-l-${tokenIdx++}`}
+              to={href}
+              className="text-blue-600 hover:text-blue-800 underline underline-offset-2 font-medium"
+            >
+              {label}
+            </Link>
+          )
+        );
+      }
+    } else if (token.startsWith("**")) {
+      tokens.push(
+        <strong key={`${keyPrefix}-b-${tokenIdx++}`} className="font-semibold text-slate-900">
+          {token.slice(2, -2)}
+        </strong>
+      );
+    } else if (token.startsWith("*")) {
+      tokens.push(
+        <em key={`${keyPrefix}-i-${tokenIdx++}`} className="italic">
+          {token.slice(1, -1)}
+        </em>
+      );
+    }
+
+    lastIndex = pattern.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    tokens.push(text.slice(lastIndex));
+  }
+
+  return tokens;
+};
 
 export const BlogArticlePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -41,41 +107,13 @@ export const BlogArticlePage: React.FC = () => {
     return headings;
   }, [post.content]);
 
-  // JSON-LD Article Schema
-  const articleJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.title,
-    "description": post.description,
-    "image": post.coverImage.startsWith("http")
-      ? post.coverImage
-      : `https://4lenergiasolar.com.br${post.coverImage}`,
-    "datePublished": post.publishedAt,
-    "dateModified": post.updatedAt,
-    "author": {
-      "@type": "Organization",
-      "name": "4L Energia Solar",
-      "url": "https://4lenergiasolar.com.br"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "4L Energia Solar",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://4lenergiasolar.com.br/logo.jpeg"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://4lenergiasolar.com.br/blog/${post.slug}`
-    }
-  };
-
-  // Simple Markdown renderer for headings and paragraphs
+  // Simple Markdown renderer for headings, lists, links and paragraphs
   const renderContent = (content: string) => {
     const sections = content.split("\n\n");
     return sections.map((sec, idx) => {
       const trimmed = sec.trim();
+      if (!trimmed) return null;
+
       if (trimmed.startsWith("## ")) {
         const title = trimmed.replace("## ", "");
         const id = title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
@@ -102,14 +140,26 @@ export const BlogArticlePage: React.FC = () => {
         return (
           <ul key={idx} className="list-disc pl-5 my-4 space-y-2 text-slate-700 text-sm sm:text-base leading-relaxed">
             {items.map((it, i) => (
-              <li key={i}>{it.replace(/^[-*]\s+|\d+\.\s+/, "")}</li>
+              <li key={i}>
+                {renderInlineFormatting(it.replace(/^[-*]\s+|\d+\.\s+/, ""), `li-${idx}-${i}`)}
+              </li>
             ))}
           </ul>
         );
       }
+      if (trimmed.startsWith("$$") && trimmed.endsWith("$$")) {
+        return (
+          <div
+            key={idx}
+            className="my-5 p-4 rounded-xl bg-slate-50 border border-slate-200 text-center text-sm sm:text-base font-semibold text-slate-800"
+          >
+            Potência Necessária (kWp) = Consumo Médio Mensal (kWh) ÷ (30 × HSP × PR)
+          </div>
+        );
+      }
       return (
         <p key={idx} className="text-slate-700 text-sm sm:text-base leading-relaxed mb-4">
-          {trimmed}
+          {renderInlineFormatting(trimmed, `p-${idx}`)}
         </p>
       );
     });
@@ -117,20 +167,7 @@ export const BlogArticlePage: React.FC = () => {
 
   return (
     <>
-      <SEOHead
-        path={`/blog/${post.slug}`}
-        title={`${post.title} | Blog 4L Energia Solar`}
-        description={post.description}
-        canonical={`https://4lenergiasolar.com.br/blog/${post.slug}`}
-        ogTitle={post.title}
-        ogDescription={post.excerpt}
-        ogType="article"
-        ogImage={post.coverImage}
-        ogImageAlt={post.coverImageAlt}
-        twitterCard="summary_large_image"
-        keywords={post.tags}
-        jsonLd={articleJsonLd}
-      />
+      <SEOHead path={`/blog/${post.slug}`} />
 
       <main className="pt-24 pb-20 bg-slate-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -161,8 +198,8 @@ export const BlogArticlePage: React.FC = () => {
               </div>
 
               {/* H1 Principal */}
-              <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
-                {post.title}
+              <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight mb-4">
+                <ShimmerText variant="dark">{post.title}</ShimmerText>
               </h1>
 
               {/* Resumo Introdutório */}
@@ -197,8 +234,8 @@ export const BlogArticlePage: React.FC = () => {
                   src={post.coverImage}
                   alt={post.coverImageAlt}
                   className="w-full h-auto max-h-[450px] object-cover"
-                  width={900}
-                  height={500}
+                  width={1200}
+                  height={630}
                 />
               </div>
 
@@ -265,11 +302,15 @@ export const BlogArticlePage: React.FC = () => {
                     <span>Falar no WhatsApp com Engenharia</span>
                   </a>
                   <Link
-                    to="/#calculadora"
+                    to={post.ctaTarget === "mercado-livre" ? "/mercado-livre" : "/#calculadora"}
                     className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-md transition-colors"
                   >
                     <Calculator className="w-4 h-4" />
-                    <span>Fazer Simulação na Calculadora</span>
+                    <span>
+                      {post.ctaTarget === "mercado-livre"
+                        ? "Avaliar Migração no Mercado Livre"
+                        : "Fazer Simulação na Calculadora"}
+                    </span>
                   </Link>
                 </div>
               </div>
@@ -277,8 +318,8 @@ export const BlogArticlePage: React.FC = () => {
               {/* Related Articles */}
               {relatedPosts.length > 0 && (
                 <div className="mt-14 pt-10 border-t border-slate-200">
-                  <h3 className="text-xl font-bold text-slate-900 mb-6">
-                    Artigos Relacionados
+                  <h3 className="text-xl font-bold mb-6">
+                    <ShimmerText variant="dark">Artigos Relacionados</ShimmerText>
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {relatedPosts.map((rel) => (

@@ -1,5 +1,6 @@
 import React, { useState, useId } from "react";
 import { Calculator as CalcIcon, Send, Sparkles, AlertCircle, CheckCircle2, ChevronRight, Zap } from "lucide-react";
+import { ShimmerText } from "../common/ShimmerText";
 import { COMPANY, getWhatsAppLink } from "../../data/company";
 
 export const Calculator: React.FC = () => {
@@ -96,7 +97,7 @@ export const Calculator: React.FC = () => {
             <span>Simulador Fotovoltaico Técnico</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-4">
-            Calcule sua Economia com Energia Solar
+            <ShimmerText variant="light">Calcule sua Economia com Energia Solar</ShimmerText>
           </h2>
           <p className="text-sm sm:text-base text-slate-400">
             Simule a potência necessária e a redução estimada na sua fatura da CPFL considerando tarifas reais, irradiação de Campinas e Circuito das Águas e regras da Lei 14.300/2022.

@@ -1,11 +1,12 @@
 import React, { useState, useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { SEOHead } from "../components/common/SEOHead";
+import { ShimmerText } from "../components/common/ShimmerText";
 import { BlogCard } from "../components/blog/BlogCard";
 import { BlogSidebar } from "../components/blog/BlogSidebar";
 import { BlogBreadcrumbs } from "../components/blog/BlogBreadcrumbs";
-import { Search, BookOpen, Sun, ChevronLeft, ChevronRight, X } from "lucide-react";
-import { BLOG_POSTS, BlogPost } from "../data/blogPosts";
+import { Search, BookOpen, ChevronLeft, ChevronRight, X, ArrowRight } from "lucide-react";
+import { BLOG_POSTS } from "../data/blogPosts";
 import { BLOG_CATEGORIES } from "../data/categories";
 
 const POSTS_PER_PAGE = 6;
@@ -54,30 +55,9 @@ export const BlogPage: React.FC = () => {
     setCurrentPage(1);
   };
 
-  const blogJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Blog 4L Energia Solar",
-    "description": "Portal de conteúdo especializado em energia solar fotovoltaica, eficiência energética e soluções para consumidores residenciais e empresariais.",
-    "url": "https://4lenergiasolar.com.br/blog",
-    "publisher": {
-      "@type": "Organization",
-      "name": "4L Energia Solar",
-      "logo": "https://4lenergiasolar.com.br/logo.jpeg"
-    }
-  };
-
   return (
     <>
-      <SEOHead
-        path="/blog"
-        title="Blog de Energia Solar e Eficiência | 4L Energia Solar"
-        description="Artigos técnicos sobre tecnologia fotovoltaica, dimensionamento, Marco Legal da GD (Lei 14.300), tarifas de energia e Mercado Livre para empresas."
-        canonical="https://4lenergiasolar.com.br/blog"
-        ogImage="/assets/og/og-blog.jpg"
-        ogImageAlt="Mesa de trabalho de engenharia solar com diagramas elétricos e tablet com métricas de geração"
-        jsonLd={blogJsonLd}
-      />
+      <SEOHead path="/blog" />
 
       <main className="pt-24 pb-20 bg-slate-50 min-h-screen">
         {/* Editorial Hero */}
@@ -87,6 +67,9 @@ export const BlogPage: React.FC = () => {
               src="/assets/hero-solar.jpg"
               alt="Módulos solares fotovoltaicos e sustentabilidade"
               className="w-full h-full object-cover opacity-45 filter brightness-95"
+              width={1920}
+              height={1280}
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/45" />
           </div>
@@ -96,7 +79,7 @@ export const BlogPage: React.FC = () => {
               <span>Portal de Conteúdo Técnico</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
-              Blog 4L Energia Solar
+              <ShimmerText variant="light">Blog 4L Energia Solar</ShimmerText>
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
               Informação técnica aprofundada, estudos tarifários, legislação e análises financeiras para residências e empresas de Campinas e região.
@@ -108,7 +91,7 @@ export const BlogPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           
           <div className="mb-6">
-            <BlogBreadcrumbs items={[{ label: "Blog", url: "/blog" }]} />
+            <BlogBreadcrumbs items={[{ label: "Blog" }]} />
           </div>
 
           {/* Search Bar & Filter Tabs */}
@@ -265,6 +248,52 @@ export const BlogPage: React.FC = () => {
             </div>
 
           </div>
+
+          {/* Cluster Cross-Linking Strip */}
+          <section className="mt-12 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <h2 className="text-lg font-extrabold text-slate-900">
+                <ShimmerText variant="dark">Da Informação Técnica à Simulação do seu Projeto</ShimmerText>
+              </h2>
+              <span className="text-xs text-slate-500">
+                Navegue pelas soluções comerciais e páginas regionais
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-semibold">
+              <Link
+                to="/#calculadora"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition-colors"
+              >
+                <span>Calculadora Técnica de Economia</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </Link>
+              <Link
+                to="/meus-projetos"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 hover:bg-blue-50 text-slate-800 hover:text-blue-700 border border-slate-200 transition-colors"
+              >
+                <span>Ver Projetos Reais Instalados</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </Link>
+              <Link
+                to="/mercado-livre"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 hover:bg-blue-50 text-slate-800 hover:text-blue-700 border border-slate-200 transition-colors"
+              >
+                <span>Mercado Livre de Energia (ACL)</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </Link>
+            </div>
+
+            <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-600">
+              <span className="font-bold text-slate-800">Páginas Regionais:</span>
+              <Link to="/energia-solar-campinas" className="text-blue-600 hover:underline">Campinas</Link>
+              <Link to="/energia-solar-indaiatuba" className="text-blue-600 hover:underline">Indaiatuba</Link>
+              <Link to="/energia-solar-socorro" className="text-blue-600 hover:underline">Socorro</Link>
+              <Link to="/energia-solar-aguas-de-lindoia" className="text-blue-600 hover:underline">Águas de Lindóia</Link>
+              <Link to="/energia-solar-lindoia" className="text-blue-600 hover:underline">Lindóia</Link>
+              <Link to="/energia-solar-amparo" className="text-blue-600 hover:underline">Amparo</Link>
+            </div>
+          </section>
 
         </div>
       </main>

@@ -29,7 +29,7 @@
     110deg,
     #0B1B33 20%,
     #2563EB 40%,
-    #F59E0B 50%,
+    #D97706 50%,
     #2563EB 60%,
     #0B1B33 80%
   );
@@ -93,10 +93,17 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .title-shimmer, .title-shimmer-light {
+  .title-shimmer {
     animation: none;
     background: none;
-    color: inherit;
+    color: #0B1B33;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+  }
+  .title-shimmer-light {
+    animation: none;
+    background: none;
+    color: #FFFFFF;
     -webkit-background-clip: border-box;
     background-clip: border-box;
   }

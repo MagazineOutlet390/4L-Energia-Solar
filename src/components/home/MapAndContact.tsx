@@ -1,5 +1,6 @@
 import React from "react";
 import { MapPin, Phone, MessageCircle, Navigation, Clock } from "lucide-react";
+import { ShimmerText } from "../common/ShimmerText";
 import { COMPANY, getWhatsAppLink } from "../../data/company";
 
 export const MapAndContact: React.FC = () => {
@@ -19,7 +20,7 @@ export const MapAndContact: React.FC = () => {
                 Nossa Localização
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-4">
-                Sede Operacional em Campinas
+                <ShimmerText variant="dark">Sede Operacional em Campinas</ShimmerText>
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                 Ponto de partida das nossas equipes técnicas e de engenharia para atender com agilidade residências, chácaras e empresas de toda a região e Circuito das Águas.

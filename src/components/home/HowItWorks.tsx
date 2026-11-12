@@ -1,5 +1,7 @@
 import React from "react";
-import { FileSearch, Compass, Wrench, CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
+import { FileSearch, Compass, Wrench, CheckCircle, ArrowRight } from "lucide-react";
+import { ShimmerText } from "../common/ShimmerText";
 
 export const HowItWorks: React.FC = () => {
   const steps = [
@@ -37,7 +39,7 @@ export const HowItWorks: React.FC = () => {
             Passo a Passo
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-4">
-            Como Funciona a Instalação com a 4L?
+            <ShimmerText variant="dark">Como Funciona a Instalação com a 4L?</ShimmerText>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             Do primeiro contato até o acompanhamento diário no aplicativo, cuidamos de todas as etapas burocráticas e técnicas do seu projeto solar.
@@ -69,6 +71,16 @@ export const HowItWorks: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            to="/blog/como-funciona-a-energia-solar"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-800 transition-colors"
+          >
+            <span>Entenda em detalhes como funciona a geração de energia solar e os créditos na distribuidora</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>

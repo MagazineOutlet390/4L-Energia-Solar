@@ -1,5 +1,6 @@
 import React from "react";
 import { Wrench, PiggyBank, Leaf, Smartphone, Headset, Banknote } from "lucide-react";
+import { ShimmerText } from "../common/ShimmerText";
 
 export const WhyChooseUs: React.FC = () => {
   const reasons = [
@@ -55,7 +56,7 @@ export const WhyChooseUs: React.FC = () => {
             Diferenciais de Engenharia
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-4">
-            Por Que Escolher a 4L Energia Solar?
+            <ShimmerText variant="dark">Por Que Escolher a 4L Energia Solar?</ShimmerText>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             Com quase 10 anos de experiência e mais de 200 clientes atendidos em Campinas e no Circuito das Águas, priorizamos rigor técnico, transparência nas estimativas e acompanhamento integral.

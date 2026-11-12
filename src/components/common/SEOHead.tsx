@@ -12,6 +12,8 @@ export interface SEOHeadProps {
   ogImage?: string;
   ogImageAlt?: string;
   twitterCard?: "summary_large_image" | "summary";
+  robots?: string;
+  noindex?: boolean;
   keywords?: string[];
   jsonLd?: object | object[];
 }
@@ -27,6 +29,8 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
   ogImage: propOgImage,
   ogImageAlt: propOgImageAlt,
   twitterCard: propTwitterCard,
+  robots: propRobots,
+  noindex = false,
   keywords: propKeywords,
   jsonLd: propJsonLd
 }) => {
@@ -44,6 +48,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     const ogImage = propOgImage || defaults.ogImage || "/assets/og/og-home.jpg";
     const ogImageAlt = propOgImageAlt || defaults.ogImageAlt || title;
     const twitterCard = propTwitterCard || defaults.twitterCard || "summary_large_image";
+    const robotsContent = noindex ? "noindex, nofollow" : propRobots || defaults.robots || "index, follow";
     const keywords = propKeywords || defaults.keywords;
     const jsonLd = propJsonLd || defaults.jsonLd;
 
@@ -86,14 +91,20 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
       tag.setAttribute("href", href);
     };
 
-    // 3. Meta Description & Keywords
+    // 3. Robots, Meta Description & Keywords
+    setMetaName("robots", robotsContent);
     setMetaName("description", description);
     if (keywords && keywords.length > 0) {
       setMetaName("keywords", keywords.join(", "));
     }
 
-    // 4. Canonical
-    setLinkTag("canonical", canonical);
+    // 4. Canonical (omit on noindex error pages unless explicitly specified)
+    if (noindex && !propCanonical) {
+      const existingCanonical = document.querySelector('link[rel="canonical"]');
+      if (existingCanonical) existingCanonical.remove();
+    } else {
+      setLinkTag("canonical", canonical);
+    }
 
     // 5. OpenGraph Tags
     const absoluteOgImage = ogImage.startsWith("http") ? ogImage : `${SITE_URL}${ogImage}`;
@@ -103,7 +114,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     setMetaProperty("og:type", ogType);
     setMetaProperty("og:title", ogTitle);
     setMetaProperty("og:description", ogDescription);
-    setMetaProperty("og:url", canonical);
+    setMetaProperty("og:url", noindex && !propCanonical ? window.location.href : canonical);
     setMetaProperty("og:image", absoluteOgImage);
     setMetaProperty("og:image:alt", ogImageAlt);
     setMetaProperty("og:image:width", "1200");
@@ -120,7 +131,7 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     const existingScripts = document.querySelectorAll('script[data-schema="dynamic"]');
     existingScripts.forEach((s) => s.remove());
 
-    if (jsonLd) {
+    if (jsonLd && !noindex) {
       const items = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
       items.forEach((item) => {
         const script = document.createElement("script");
@@ -141,6 +152,8 @@ export const SEOHead: React.FC<SEOHeadProps> = ({
     propOgImage,
     propOgImageAlt,
     propTwitterCard,
+    propRobots,
+    noindex,
     propKeywords,
     propJsonLd
   ]);

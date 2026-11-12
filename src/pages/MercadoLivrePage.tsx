@@ -1,38 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { SEOHead } from "../components/common/SEOHead";
-import { Building2, ArrowRight, CheckCircle2, ShieldAlert, FileText, TrendingDown, Clock, MessageCircle, HelpCircle } from "lucide-react";
-import { COMPANY, getWhatsAppLink } from "../data/company";
+import { ShimmerText } from "../components/common/ShimmerText";
+import { BlogBreadcrumbs } from "../components/blog/BlogBreadcrumbs";
+import { Building2, ArrowRight, MessageCircle, HelpCircle } from "lucide-react";
+import { getWhatsAppLink } from "../data/company";
+import { MERCADO_LIVRE_FAQ } from "../data/faq";
 
 export const MercadoLivrePage: React.FC = () => {
-  const b2bFaq = [
-    {
-      q: "O que é o Ambiente de Contratação Livre (ACL)?",
-      a: "É o mercado regulado pela CCEE onde consumidores escolhem livremente sua comercializadora de energia elétrica, contratando volume, preço por MWh e fonte renovável por períodos predefinidos."
-    },
-    {
-      q: "Minha empresa precisa fazer obras ou trocar a fiação?",
-      a: "Não. A energia elétrica continua trafegando pelos mesmos fios e postes da concessionária local (ex: CPFL Paulista). A única intervenção técnica é a adequação do sistema de medição e faturamento (SMF) com medidor homologado."
-    },
-    {
-      q: "Existe risco de faltar energia?",
-      a: "Não. A segurança física do suprimento permanece sob responsabilidade integral da distribuidora local (CPFL). O Mercado Livre altera apenas a relação comercial de compra da energia."
-    },
-    {
-      q: "Por que a referência comercial é de R$ 9 mil/mês?",
-      a: "Qualquer empresa em média ou alta tensão (Grupo A) pode migrar por lei. No entanto, faturas a partir de R$ 9 mil a R$ 10 mil mensais apresentam a melhor relação entre economia obtida e custos de gestão com a comercializadora varejista."
-    }
-  ];
-
   return (
     <>
-      <SEOHead
-        path="/mercado-livre"
-        title="Mercado Livre de Energia para Empresas | 4L Energia Solar"
-        description="Assessoria completa para migração de empresas ao Mercado Livre de Energia (ACL). Redução de custos e previsibilidade para faturas a partir de R$ 9 mil mensais."
-        canonical="https://4lenergiasolar.com.br/mercado-livre"
-        ogImage="/assets/og/og-mercado-livre.jpg"
-        ogImageAlt="Complexo industrial e empresarial com usina solar na cobertura e infraestrutura de média tensão"
-      />
+      <SEOHead path="/mercado-livre" />
 
       <main className="pt-24 pb-20 bg-slate-50 min-h-screen">
         {/* B2B Hero */}
@@ -42,6 +20,9 @@ export const MercadoLivrePage: React.FC = () => {
               src="/assets/hero-solar.jpg"
               alt="Instalação solar fotovoltaica e ambiente empresarial"
               className="w-full h-full object-cover opacity-60 filter brightness-95"
+              width={1920}
+              height={1280}
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/65 to-blue-950/50" />
           </div>
@@ -52,7 +33,7 @@ export const MercadoLivrePage: React.FC = () => {
               <span>Ambiente de Contratação Livre (ACL)</span>
             </div>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6">
-              Mercado Livre de Energia para sua Empresa
+              <ShimmerText variant="light">Mercado Livre de Energia para sua Empresa</ShimmerText>
             </h1>
             <p className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
               Negocie diretamente o preço da sua energia elétrica, proteja seu orçamento contra bandeiras tarifárias e consuma eletricidade 100% renovável com assessoria técnica da 4L Energia Solar.
@@ -72,6 +53,11 @@ export const MercadoLivrePage: React.FC = () => {
           </div>
         </section>
 
+        {/* Visible Breadcrumbs */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+          <BlogBreadcrumbs items={[{ label: "Mercado Livre de Energia" }]} />
+        </div>
+
         {/* Overview & Eligibility */}
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -80,7 +66,7 @@ export const MercadoLivrePage: React.FC = () => {
                 Elegibilidade Empresarial
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
-                Quem Pode Migrar para o Mercado Livre de Energia?
+                <ShimmerText variant="dark">Quem Pode Migrar para o Mercado Livre de Energia?</ShimmerText>
               </h2>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                 Desde janeiro de 2024, a Portaria nº 50/2022 do Ministério de Minas e Energia autorizou todos os consumidores conectados em média ou alta tensão (Grupo A) a ingressar no mercado livre através do modelo de comercialização varejista.
@@ -113,7 +99,7 @@ export const MercadoLivrePage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-14">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
-                As Etapas da Migração Empresarial
+                <ShimmerText variant="dark">As Etapas da Migração Empresarial</ShimmerText>
               </h2>
               <p className="text-sm text-slate-600">
                 Processo transparente e conduzido com total rigor regulatório pela 4L Energia Solar.
@@ -158,26 +144,63 @@ export const MercadoLivrePage: React.FC = () => {
         {/* Contract Precautions & FAQ */}
         <section className="py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-extrabold text-slate-900 mb-8 text-center">
-            Perguntas Frequentes sobre o Mercado Livre
+            <ShimmerText variant="dark">Perguntas Frequentes sobre o Mercado Livre</ShimmerText>
           </h2>
           <div className="space-y-4">
-            {b2bFaq.map((item, idx) => (
+            {MERCADO_LIVRE_FAQ.map((item, idx) => (
               <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
                 <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
                   <HelpCircle className="w-4 h-4 text-blue-600 shrink-0" />
-                  <span>{item.q}</span>
+                  <span>{item.question}</span>
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed pl-6">
-                  {item.a}
+                  {item.answer}
                 </p>
               </div>
             ))}
           </div>
 
+          {/* Contextual B2B Internal Links */}
+          <div className="mt-10 bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">
+              Conteúdos e Soluções Relacionadas para Empresas
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-semibold">
+              <Link
+                to="/blog/mercado-livre-de-energia-vale-a-pena"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 hover:bg-blue-50 text-slate-800 hover:text-blue-700 border border-slate-200 transition-colors"
+              >
+                <span>Artigo: Mercado Livre de Energia vale a pena?</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </Link>
+              <Link
+                to="/blog/energia-solar-para-empresas"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 hover:bg-blue-50 text-slate-800 hover:text-blue-700 border border-slate-200 transition-colors"
+              >
+                <span>Artigo: Energia Solar para Empresas e Comércios</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </Link>
+              <Link
+                to="/meus-projetos"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 hover:bg-blue-50 text-slate-800 hover:text-blue-700 border border-slate-200 transition-colors"
+              >
+                <span>Ver Projetos Comerciais Entregues pela 4L</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </Link>
+              <Link
+                to="/energia-solar-campinas"
+                className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 hover:bg-blue-50 text-slate-800 hover:text-blue-700 border border-slate-200 transition-colors"
+              >
+                <span>Soluções Empresariais em Campinas - SP</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
+              </Link>
+            </div>
+          </div>
+
           {/* Final B2B Action */}
           <div className="mt-12 text-center bg-blue-950 text-white p-8 rounded-3xl shadow-xl space-y-4">
             <h3 className="text-2xl font-bold">
-              Avalie o Potencial da sua Empresa com a 4L
+              <ShimmerText variant="light">Avalie o Potencial da sua Empresa com a 4L</ShimmerText>
             </h3>
             <p className="text-sm text-slate-300 max-w-xl mx-auto">
               Envie a fatura de energia da sua empresa para nosso time e receba um estudo comparativo detalhado.

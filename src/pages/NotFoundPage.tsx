@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { SEOHead } from "../components/common/SEOHead";
-import { Home, MessageCircle, ArrowLeft } from "lucide-react";
+import { Home, MessageCircle } from "lucide-react";
 import { getWhatsAppLink } from "../data/company";
 
 export const NotFoundPage: React.FC = () => {
@@ -9,7 +9,8 @@ export const NotFoundPage: React.FC = () => {
     <>
       <SEOHead
         title="Página Não Encontrada (404) | 4L Energia Solar"
-        description="A página que você está procurando não existe ou foi movida."
+        description="A página solicitada não foi encontrada no portal da 4L Energia Solar. Retorne ao início para explorar nossos projetos, cidades e artigos técnicos."
+        noindex
       />
 
       <main className="min-h-[80vh] flex items-center justify-center pt-24 pb-16 bg-slate-50 px-4">

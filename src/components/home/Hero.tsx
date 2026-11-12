@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Calculator, MessageCircle, Sun, ShieldCheck } from "lucide-react";
+import { ShimmerText } from "../common/ShimmerText";
 import { COMPANY, getWhatsAppLink } from "../../data/company";
 
 export const Hero: React.FC = () => {
@@ -54,7 +55,9 @@ export const Hero: React.FC = () => {
           alt="Instalação de painéis solares fotovoltaicos sobre telhado com céu azul"
           className="w-full h-full object-cover object-center opacity-65 filter brightness-95"
           width={1920}
-          height={1080}
+          height={1280}
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-950/35" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent" />
@@ -70,9 +73,9 @@ export const Hero: React.FC = () => {
         {/* H1 Principal integral para SEO semântico */}
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl mx-auto">
           Energia Solar em Campinas e Circuito das Águas:{" "}
-          <span className="title-shimmer-light">
+          <ShimmerText variant="light">
             Mais Economia para sua Conta de Luz
-          </span>
+          </ShimmerText>
         </h1>
 
         {/* Dynamic Typewriter secondary subtitle */}

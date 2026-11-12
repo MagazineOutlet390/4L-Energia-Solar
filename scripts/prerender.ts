@@ -90,7 +90,7 @@ async function runPrerender() {
     if (cityMatch) {
       return `
         <article class="max-w-5xl mx-auto p-6">
-          <nav aria-label="breadcrumb"><a href="/">Início</a> &gt; <span>${cityMatch.city}</span></nav>
+          <nav aria-label="breadcrumb"><a href="/">Início</a> &gt; <span>Energia Solar em ${cityMatch.city}</span></nav>
           <header class="mt-4">
             <span class="text-xs uppercase text-blue-600 font-bold">${cityMatch.region}</span>
             <h1 class="text-3xl sm:text-4xl font-extrabold mt-2">${cityMatch.h1}</h1>
@@ -121,7 +121,7 @@ async function runPrerender() {
     if (blogMatch) {
       return `
         <article class="max-w-4xl mx-auto p-6">
-          <nav aria-label="breadcrumb"><a href="/">Início</a> &gt; <a href="/blog">Blog</a> &gt; <span>${blogMatch.title}</span></nav>
+          <nav aria-label="breadcrumb"><a href="/">Início</a> &gt; <a href="/blog">Blog</a> &gt; <a href="/blog?categoria=${blogMatch.categorySlug}">${blogMatch.category}</a> &gt; <span>${blogMatch.title}</span></nav>
           <header class="mt-4">
             <span class="text-xs uppercase text-blue-600 font-bold">${blogMatch.category}</span>
             <h1 class="text-3xl font-extrabold mt-2">${blogMatch.title}</h1>
@@ -151,7 +151,11 @@ async function runPrerender() {
       `<title>${r.title}</title>`
     );
 
-    // 3. Meta Description
+    // 3. Robots & Meta Description
+    pageHtml = pageHtml.replace(/<meta\s+name="robots"\s+content=".*?"\s*\/?>\n?/gi, "");
+    const robotsDirective = r.robots || "index, follow";
+    pageHtml = pageHtml.replace("</head>", `  <meta name="robots" content="${robotsDirective}" />\n</head>`);
+
     if (pageHtml.includes('name="description"')) {
       pageHtml = pageHtml.replace(
         /<meta\s+name="description"\s+content=".*?"\s*\/?>/i,
@@ -202,6 +206,7 @@ async function runPrerender() {
     pageHtml = pageHtml.replace("</head>", `${ogAndTwitterTags}\n</head>`);
 
     // 6. JSON-LD Structured Data
+    pageHtml = pageHtml.replace(/<script\s+type="application\/ld\+json"[^>]*>.*?<\/script>\n?/gi, "");
     if (r.jsonLd) {
       const items = Array.isArray(r.jsonLd) ? r.jsonLd : [r.jsonLd];
       const jsonLdTags = items
@@ -237,7 +242,30 @@ async function runPrerender() {
     }
   }
 
-  // 9. Geração do Sitemap.xml completo e canônico
+  // 9. Pré-renderização da página 404 estática (noindex, sem canonical da home)
+  let notFoundHtml = baseHtml;
+  notFoundHtml = notFoundHtml.replace(/<html(\s+[^>]*)?>/i, '<html lang="pt-BR">');
+  notFoundHtml = notFoundHtml.replace(
+    /<title>.*?<\/title>/i,
+    "<title>Página Não Encontrada (404) | 4L Energia Solar</title>"
+  );
+  notFoundHtml = notFoundHtml.replace(/<meta\s+name="robots"\s+content=".*?"\s*\/?>\n?/gi, "");
+  notFoundHtml = notFoundHtml.replace(
+    /<meta\s+name="description"\s+content=".*?"\s*\/?>/i,
+    '<meta name="description" content="A página solicitada não foi encontrada no portal da 4L Energia Solar. Retorne ao início para explorar nossos projetos, cidades e artigos técnicos." />'
+  );
+  notFoundHtml = notFoundHtml.replace(/<link\s+rel="canonical"\s+href=".*?"\s*\/?>\n?/gi, "");
+  notFoundHtml = notFoundHtml.replace(/<meta\s+property="og:.*?"\s+content=".*?"\s*\/?>\n?/gi, "");
+  notFoundHtml = notFoundHtml.replace(/<meta\s+name="twitter:.*?"\s+content=".*?"\s*\/?>\n?/gi, "");
+  notFoundHtml = notFoundHtml.replace("</head>", '  <meta name="robots" content="noindex, nofollow" />\n</head>');
+  notFoundHtml = notFoundHtml.replace(
+    '<div id="root"></div>',
+    `<div id="root"><main class="max-w-xl mx-auto p-8 text-center"><h1 class="text-2xl font-bold">Página Não Encontrada (404)</h1><p class="mt-2">O conteúdo solicitado não está disponível. <a href="/">Voltar para a Página Inicial</a>.</p></main></div>`
+  );
+  fs.writeFileSync(path.join(DIST_DIR, "404.html"), notFoundHtml, "utf-8");
+  console.log("✅ Pré-renderizado: 404 -> dist/404.html (noindex, nofollow)");
+
+  // 10. Geração do Sitemap.xml completo e canônico (apenas rotas indexáveis)
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${allRoutes

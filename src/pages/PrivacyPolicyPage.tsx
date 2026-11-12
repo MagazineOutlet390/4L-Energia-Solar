@@ -1,23 +1,21 @@
 import React from "react";
 import { SEOHead } from "../components/common/SEOHead";
-import { ShieldCheck, Lock, Mail, MessageCircle } from "lucide-react";
-import { COMPANY, getWhatsAppLink } from "../data/company";
+import { ShimmerText } from "../components/common/ShimmerText";
+import { BlogBreadcrumbs } from "../components/blog/BlogBreadcrumbs";
+import { ShieldCheck, MessageCircle } from "lucide-react";
+import { getWhatsAppLink } from "../data/company";
 
 export const PrivacyPolicyPage: React.FC = () => {
   return (
     <>
-      <SEOHead
-        path="/politica-de-privacidade"
-        title="Política de Privacidade e LGPD | 4L Energia Solar"
-        description="Diretrizes de privacidade, segurança da informação e tratamento de dados pessoais da 4L Energia Solar em estrita conformidade com a LGPD (Lei nº 13.709/2018)."
-        canonical="https://4lenergiasolar.com.br/politica-de-privacidade"
-        ogImage="/assets/og/og-politica-de-privacidade.jpg"
-        ogImageAlt="Diretrizes de conformidade jurídica e segurança da informação da 4L Energia Solar"
-        twitterCard="summary"
-      />
+      <SEOHead path="/politica-de-privacidade" />
 
       <main className="pt-24 pb-20 bg-slate-50 min-h-screen">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12">
+          <div className="mb-4">
+            <BlogBreadcrumbs items={[{ label: "Política de Privacidade" }]} />
+          </div>
+
           <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm space-y-8">
             
             <div className="border-b border-slate-100 pb-6">
@@ -26,7 +24,7 @@ export const PrivacyPolicyPage: React.FC = () => {
                 <span>LGPD (Lei nº 13.709/2018)</span>
               </div>
               <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">
-                Política de Privacidade e Proteção de Dados
+                <ShimmerText variant="dark">Política de Privacidade e Proteção de Dados</ShimmerText>
               </h1>
               <p className="text-xs text-slate-400 mt-1">
                 Última atualização: Novembro de 2026

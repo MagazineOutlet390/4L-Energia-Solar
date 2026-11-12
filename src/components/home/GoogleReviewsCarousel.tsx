@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Star, CheckCircle2, MessageSquare, ExternalLink, Pause, Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { ShimmerText } from "../common/ShimmerText";
 import { GOOGLE_REVIEWS, Review } from "../../data/reviews";
 
 export const GoogleReviewsCarousel: React.FC = () => {
@@ -48,7 +49,7 @@ export const GoogleReviewsCarousel: React.FC = () => {
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-              O que dizem os clientes da 4L Energia Solar
+              <ShimmerText variant="dark">O que dizem os clientes da 4L Energia Solar</ShimmerText>
             </h2>
             <p className="text-base text-slate-600 mt-2 max-w-2xl">
               Depoimentos reais e espontâneos publicados no perfil oficial da empresa por clientes de Campinas e municípios da região.

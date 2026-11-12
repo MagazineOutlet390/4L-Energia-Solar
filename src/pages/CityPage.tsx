@@ -1,24 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { SEOHead } from "../components/common/SEOHead";
+import { ShimmerText } from "../components/common/ShimmerText";
+import { BlogBreadcrumbs } from "../components/blog/BlogBreadcrumbs";
 import { CityData } from "../data/cities";
 import { COMPANY, getWhatsAppLink } from "../data/company";
 import { 
   Sun, 
   MapPin, 
   ShieldCheck, 
-  CheckCircle2, 
   MessageCircle, 
   Calculator, 
   ChevronDown, 
   ArrowRight, 
   Building2, 
   HelpCircle,
-  Zap,
-  TrendingUp,
-  Clock,
-  Compass,
-  Home
+  Zap
 } from "lucide-react";
 
 interface CityPageProps {
@@ -59,76 +56,9 @@ export const CityPage: React.FC<CityPageProps> = ({ cityData }) => {
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, currentPhraseIdx, cityData]);
 
-  // JSON-LD Schemas: Service + BreadcrumbList + FAQPage
-  const cityJsonLd = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": `Instalação de Energia Solar em ${cityData.city}`,
-      "description": cityData.metaDescription,
-      "provider": {
-        "@type": "HomeAndConstructionBusiness",
-        "name": COMPANY.name,
-        "telephone": "+5519983155772",
-        "url": "https://4lenergiasolar.com.br",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Rua Stecca Pelegrini",
-          "addressLocality": "Campinas",
-          "addressRegion": "SP",
-          "addressCountry": "BR"
-        }
-      },
-      "areaServed": {
-        "@type": "City",
-        "name": cityData.city
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Início",
-          "item": "https://4lenergiasolar.com.br/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": `Energia Solar em ${cityData.city}`,
-          "item": `https://4lenergiasolar.com.br/${cityData.slug}`
-        }
-      ]
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": cityData.faq.map((item) => ({
-        "@type": "Question",
-        "name": item.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": item.answer
-        }
-      }))
-    }
-  ];
-
   return (
     <>
-      <SEOHead
-        path={`/${cityData.slug}`}
-        title={cityData.title}
-        description={cityData.metaDescription}
-        canonical={`https://4lenergiasolar.com.br/${cityData.slug}`}
-        ogTitle={`${cityData.h1} | 4L Energia Solar`}
-        ogDescription={cityData.metaDescription}
-        ogImage={`/assets/og/og-${cityData.slug.replace("energia-solar-", "")}.jpg`}
-        ogImageAlt={`Instalação de energia solar fotovoltaica em ${cityData.city} realizada pela 4L Energia Solar`}
-        jsonLd={cityJsonLd}
-      />
+      <SEOHead path={`/${cityData.slug}`} />
 
       <main className="pt-20 bg-slate-50 min-h-screen">
         
@@ -139,8 +69,9 @@ export const CityPage: React.FC<CityPageProps> = ({ cityData }) => {
               src={cityData.heroImage}
               alt={`Energia solar fotovoltaica em ${cityData.city}`}
               className="w-full h-full object-cover object-center opacity-65 filter brightness-95"
-              width={1920}
-              height={1080}
+              width={1200}
+              height={630}
+              loading="eager"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/65 to-slate-950/35" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent" />
@@ -156,7 +87,7 @@ export const CityPage: React.FC<CityPageProps> = ({ cityData }) => {
 
             {/* Single H1 with Primary Keyword and City */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight max-w-4xl mx-auto">
-              {cityData.h1}
+              <ShimmerText variant="light">{cityData.h1}</ShimmerText>
             </h1>
 
             {/* Typewriter subtitle */}
@@ -213,37 +144,22 @@ export const CityPage: React.FC<CityPageProps> = ({ cityData }) => {
           </div>
         </section>
 
-        {/* Breadcrumbs */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <nav aria-label="Breadcrumb" className="text-xs text-slate-500">
-            <ol className="flex items-center gap-1.5">
-              <li>
-                <Link to="/" className="hover:text-slate-900 flex items-center gap-1">
-                  <Home className="w-3.5 h-3.5" />
-                  <span>Início</span>
-                </Link>
-              </li>
-              <li>·</li>
-              <li>
-                <span className="text-slate-400">Cidades</span>
-              </li>
-              <li>·</li>
-              <li className="font-semibold text-slate-800" aria-current="page">
-                {cityData.city}
-              </li>
-            </ol>
-          </nav>
+        {/* Breadcrumbs (1:1 parity with Schema.org BreadcrumbList) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
+          <BlogBreadcrumbs items={[{ label: `Energia Solar em ${cityData.city}` }]} />
         </div>
 
         {/* Section 1: Introduction & Operational Proximity */}
-        <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-4">
               <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block">
                 Atendimento Técnico Regional
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                Apresentação da 4L Energia Solar para {cityData.city}
+                <ShimmerText variant="dark">
+                  Apresentação da 4L Energia Solar para {cityData.city}
+                </ShimmerText>
               </h2>
               <p className="text-base text-slate-600 leading-relaxed">
                 {cityData.intro}
@@ -276,7 +192,9 @@ export const CityPage: React.FC<CityPageProps> = ({ cityData }) => {
                 Viabilidade Técnica
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
-                Por Que a Energia Solar Faz Sentido em {cityData.city}?
+                <ShimmerText variant="dark">
+                  Por Que a Energia Solar Faz Sentido em {cityData.city}?
+                </ShimmerText>
               </h2>
               <p className="text-sm text-slate-600">
                 Fundamentos econômicos e operacionais alinhados ao perfil das atividades e consumidores de {cityData.city}.
@@ -313,7 +231,9 @@ export const CityPage: React.FC<CityPageProps> = ({ cityData }) => {
               Segmentos Atendidos
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
-              Quem Pode se Beneficiar em {cityData.city}?
+              <ShimmerText variant="dark">
+                Quem Pode se Beneficiar em {cityData.city}?
+              </ShimmerText>
             </h2>
             <p className="text-sm text-slate-600">
               Soluções personalizadas conforme o tipo de ligação, estrutura do imóvel e padrão de consumo.
@@ -393,7 +313,9 @@ export const CityPage: React.FC<CityPageProps> = ({ cityData }) => {
                 Metodologia
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
-                Como Funciona a Implantação em {cityData.city}?
+                <ShimmerText variant="dark">
+                  Como Funciona a Implantação em {cityData.city}?
+                </ShimmerText>
               </h2>
               <p className="text-sm text-slate-600">
                 Do estudo tarifário à vistoria da CPFL, nossa equipe cuida de cada detalhe.
@@ -430,12 +352,19 @@ export const CityPage: React.FC<CityPageProps> = ({ cityData }) => {
             <p className="text-sm text-slate-600 leading-relaxed">
               {cityData.regionalEvidence.text}
             </p>
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap items-center gap-6">
               <Link
                 to="/meus-projetos"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-800"
               >
                 <span>Conheça todas as obras fotovoltaicas entregues pela 4L</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link
+                to="/blog/energia-solar-no-circuito-das-aguas-guia-regional"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 hover:text-blue-700"
+              >
+                <span>Leia o guia regional de energia solar no Circuito das Águas e RMC</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
@@ -451,7 +380,9 @@ export const CityPage: React.FC<CityPageProps> = ({ cityData }) => {
                 <span>Perguntas Frequentes</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">
-                Dúvidas sobre Energia Solar em {cityData.city}
+                <ShimmerText variant="dark">
+                  Dúvidas sobre Energia Solar em {cityData.city}
+                </ShimmerText>
               </h2>
               <p className="text-sm text-slate-600">
                 Respostas práticas para as principais questões de quem deseja instalar painéis fotovoltaicos na localidade.
@@ -498,7 +429,9 @@ export const CityPage: React.FC<CityPageProps> = ({ cityData }) => {
               Atendimento em {cityData.city}
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
-              Solicite uma avaliação técnica gratuita para seu imóvel em {cityData.city}
+              <ShimmerText variant="light">
+                Solicite uma avaliação técnica gratuita para seu imóvel em {cityData.city}
+              </ShimmerText>
             </h2>
             <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
               Envie sua conta de luz para nossa equipe e receba um estudo prévio de potência, estimativa de economia e viabilidade de financiamento.

@@ -1,6 +1,7 @@
 import React from "react";
 import { MessageCircle, ArrowRight } from "lucide-react";
-import { COMPANY, getWhatsAppLink } from "../../data/company";
+import { ShimmerText } from "../common/ShimmerText";
+import { getWhatsAppLink } from "../../data/company";
 
 export const FinalCTA: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ export const FinalCTA: React.FC = () => {
           alt="Painéis solares fotovoltaicos sobre telhado com céu azul"
           className="w-full h-full object-cover opacity-60 filter brightness-95"
           width={1920}
-          height={600}
+          height={1280}
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/65 to-blue-950/50" />
@@ -22,7 +23,9 @@ export const FinalCTA: React.FC = () => {
           Atendimento Personalizado
         </span>
         <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-          Comece a transformar sua conta de luz em uma oportunidade de economia.
+          <ShimmerText variant="light">
+            Comece a transformar sua conta de luz em uma oportunidade de economia.
+          </ShimmerText>
         </h2>
         <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
           Envie sua última fatura de energia para nossa equipe de engenharia e receba um estudo prévio de viabilidade técnica sem compromisso.

@@ -14,5 +14,5 @@
 /energia-solar-campinas          /energia-solar-campinas/index.html          200
 /energia-solar-indaiatuba        /energia-solar-indaiatuba/index.html        200
 
-# Client-side router fallback for dynamic requests
-/*                        /index.html                          200
+# Unknown URL fallback (true 404 status with static 404 page)
+/*                        /404.html                            404

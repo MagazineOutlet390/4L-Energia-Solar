@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ChevronDown, HelpCircle, ArrowRight } from "lucide-react";
+import { ShimmerText } from "../common/ShimmerText";
 import { FAQ_ITEMS } from "../../data/faq";
 
 export const FAQAccordion: React.FC = () => {
@@ -18,7 +20,7 @@ export const FAQAccordion: React.FC = () => {
             <span>Tira-Dúvidas Técnico</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-4">
-            Perguntas Frequentes sobre Energia Solar
+            <ShimmerText variant="dark">Perguntas Frequentes sobre Energia Solar</ShimmerText>
           </h2>
           <p className="text-base text-slate-600 leading-relaxed">
             Respostas claras, completas e sem promessas irreais sobre dimensionamento, prazos, garantias e economia.
@@ -54,6 +56,31 @@ export const FAQAccordion: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Contextual Guides Link Bar */}
+        <div className="mt-8 p-5 rounded-2xl bg-white border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
+          <span className="font-bold text-slate-800">
+            Quer aprofundar algum tema técnico?
+          </span>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 font-semibold text-blue-600">
+            <Link to="/blog/como-funciona-a-energia-solar" className="hover:text-blue-800 inline-flex items-center gap-1">
+              <span>Como funciona</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+            <Link to="/blog/como-calcular-a-economia-com-paineis-solares" className="hover:text-blue-800 inline-flex items-center gap-1">
+              <span>Cálculo de economia</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+            <Link to="/mercado-livre" className="hover:text-blue-800 inline-flex items-center gap-1">
+              <span>Mercado Livre (ACL)</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+            <Link to="/blog" className="hover:text-blue-800 inline-flex items-center gap-1">
+              <span>Todos os artigos</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
